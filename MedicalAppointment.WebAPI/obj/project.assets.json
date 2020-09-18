@@ -1,0 +1,117 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "MedicalAppointment.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/MedicalAppointment.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MedicalAppointment.Core.dll": {}
+        }
+      },
+      "MedicalAppointment.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "MedicalAppointment.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MedicalAppointment.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MedicalAppointment.Infrastructure.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MedicalAppointment.Core/1.0.0": {
+      "type": "project",
+      "path": "../MedicalAppointment.Core/MedicalAppointment.Core.csproj",
+      "msbuildProject": "../MedicalAppointment.Core/MedicalAppointment.Core.csproj"
+    },
+    "MedicalAppointment.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../MedicalAppointment.Infrastructure/MedicalAppointment.Infrastructure.csproj",
+      "msbuildProject": "../MedicalAppointment.Infrastructure/MedicalAppointment.Infrastructure.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "MedicalAppointment.Core >= 1.0.0",
+      "MedicalAppointment.Infrastructure >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\ANDRIJA\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\Projects\\ASP NET Core Angular\\MedicalAppointment\\MedicalAppointment.WebAPI\\MedicalAppointment.WebAPI.csproj",
+      "projectName": "MedicalAppointment.WebAPI",
+      "projectPath": "D:\\Projects\\ASP NET Core Angular\\MedicalAppointment\\MedicalAppointment.WebAPI\\MedicalAppointment.WebAPI.csproj",
+      "packagesPath": "C:\\Users\\ANDRIJA\\.nuget\\packages\\",
+      "outputPath": "D:\\Projects\\ASP NET Core Angular\\MedicalAppointment\\MedicalAppointment.WebAPI\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\ANDRIJA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "projectReferences": {
+            "D:\\Projects\\ASP NET Core Angular\\MedicalAppointment\\MedicalAppointment.Core\\MedicalAppointment.Core.csproj": {
+              "projectPath": "D:\\Projects\\ASP NET Core Angular\\MedicalAppointment\\MedicalAppointment.Core\\MedicalAppointment.Core.csproj"
+            },
+            "D:\\Projects\\ASP NET Core Angular\\MedicalAppointment\\MedicalAppointment.Infrastructure\\MedicalAppointment.Infrastructure.csproj": {
+              "projectPath": "D:\\Projects\\ASP NET Core Angular\\MedicalAppointment\\MedicalAppointment.Infrastructure\\MedicalAppointment.Infrastructure.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
