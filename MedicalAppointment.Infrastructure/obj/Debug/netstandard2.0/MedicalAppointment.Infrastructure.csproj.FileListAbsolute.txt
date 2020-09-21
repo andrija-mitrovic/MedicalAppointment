@@ -1,0 +1,4 @@
+D:\Projects\ASP NET Core Angular\MedicalAppointment\MedicalAppointment.Infrastructure\bin\Debug\netstandard2.0\MedicalAppointment.Core.dll
+D:\Projects\ASP NET Core Angular\MedicalAppointment\MedicalAppointment.Infrastructure\obj\Debug\netstandard2.0\MedicalAppointment.Infrastructure.csprojAssemblyReference.cache
+D:\Projects\ASP NET Core Angular\MedicalAppointment\MedicalAppointment.Infrastructure\obj\Debug\netstandard2.0\MedicalAppointment.Infrastructure.AssemblyInfoInputs.cache
+D:\Projects\ASP NET Core Angular\MedicalAppointment\MedicalAppointment.Infrastructure\obj\Debug\netstandard2.0\MedicalAppointment.Infrastructure.AssemblyInfo.cs
