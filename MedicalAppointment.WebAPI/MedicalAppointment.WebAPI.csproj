@@ -9,5 +9,9 @@
     <ProjectReference Include="..\MedicalAppointment.Infrastructure\MedicalAppointment.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+
 
 </Project>

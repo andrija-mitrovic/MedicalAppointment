@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "R0CB0hYnHqs8NZ4/DO42QXOpZSq69GjJaVFTXCqCD5RYY/Sjq45xYVI6gCWE3RO98/t172f67iQEzURsdI7Ttg==",
+  "dgSpecHash": "jPAT6g8SDeoWR+vf4XNvzWU+N13EcDSN8IPNOJ3iFV4PL64w6rGzVWAm4caj81lMesBNPrnO63oxw5p6T+tXvA==",
   "success": true,
   "projectFilePath": "D:\\Projects\\ASP NET Core Angular\\MedicalAppointment\\MedicalAppointment.Core\\MedicalAppointment.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ANDRIJA\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.8\\microsoft.extensions.dependencyinjection.3.1.8.nupkg.sha512",
+    "C:\\Users\\ANDRIJA\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.8\\microsoft.extensions.dependencyinjection.abstractions.3.1.8.nupkg.sha512"
+  ],
   "logs": []
 }
