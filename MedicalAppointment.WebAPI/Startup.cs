@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MedicalAppointment.Core;
 using MedicalAppointment.Infrastructure;
+using MedicalAppointment.WebAPI.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,7 +30,7 @@ namespace MedicalAppointment.WebAPI
         {
             services.AddCore();
             services.AddInfrastructure(Configuration);
-            services.AddControllers();
+            services.ConfigureControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
