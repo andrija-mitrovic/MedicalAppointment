@@ -14,7 +14,6 @@
 
   <ItemGroup>
     <Folder Include="Data\UnitOfWork\" />
-    <Folder Include="Data\Repositories\" />
   </ItemGroup>
 
 </Project>
