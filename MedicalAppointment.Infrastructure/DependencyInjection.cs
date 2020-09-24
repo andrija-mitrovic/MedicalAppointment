@@ -1,5 +1,7 @@
-﻿using MedicalAppointment.Core.Models;
+﻿using MedicalAppointment.Core.Interfaces;
+using MedicalAppointment.Core.Models;
 using MedicalAppointment.Infrastructure.Data;
+using MedicalAppointment.Infrastructure.Data.UnitOfWork;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -16,6 +18,7 @@ namespace MedicalAppointment.Infrastructure
         {
             services.ConfigureIdentity();
             services.ConfigureDatabase(config);
+            services.ConfigureInjection();
 
             return services;
         }
@@ -42,6 +45,11 @@ namespace MedicalAppointment.Infrastructure
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     config.GetConnectionString("DefaultConnection")));
+        }
+
+        private static void ConfigureInjection(this IServiceCollection services)
+        {
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
     }
 }

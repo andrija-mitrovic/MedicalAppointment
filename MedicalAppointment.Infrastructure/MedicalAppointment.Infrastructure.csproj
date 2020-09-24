@@ -15,8 +15,4 @@
     <ProjectReference Include="..\MedicalAppointment.Core\MedicalAppointment.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Data\UnitOfWork\" />
-  </ItemGroup>
-
 </Project>
