@@ -6,7 +6,7 @@ D:\Projects\ASP NET Core Angular\MedicalAppointment\MedicalAppointment.Infrastru
 D:\Projects\ASP NET Core Angular\MedicalAppointment\MedicalAppointment.Infrastructure\obj\Debug\netstandard2.1\MedicalAppointment.Infrastructure.csprojAssemblyReference.cache
 D:\Projects\ASP NET Core Angular\MedicalAppointment\MedicalAppointment.Infrastructure\obj\Debug\netstandard2.1\MedicalAppointment.Infrastructure.AssemblyInfoInputs.cache
 D:\Projects\ASP NET Core Angular\MedicalAppointment\MedicalAppointment.Infrastructure\obj\Debug\netstandard2.1\MedicalAppointment.Infrastructure.AssemblyInfo.cs
-D:\Projects\ASP NET Core Angular\MedicalAppointment\MedicalAppointment.Infrastructure\obj\Debug\netstandard2.1\MedicalAppointment.Infrastructure.csproj.CoreCompileInputs.cache
 D:\Projects\ASP NET Core Angular\MedicalAppointment\MedicalAppointment.Infrastructure\obj\Debug\netstandard2.1\MedicalAppointment.Infrastructure.csproj.CopyComplete
 D:\Projects\ASP NET Core Angular\MedicalAppointment\MedicalAppointment.Infrastructure\obj\Debug\netstandard2.1\MedicalAppointment.Infrastructure.dll
 D:\Projects\ASP NET Core Angular\MedicalAppointment\MedicalAppointment.Infrastructure\obj\Debug\netstandard2.1\MedicalAppointment.Infrastructure.pdb
+D:\Projects\ASP NET Core Angular\MedicalAppointment\MedicalAppointment.Infrastructure\obj\Debug\netstandard2.1\MedicalAppointment.Infrastructure.csproj.CoreCompileInputs.cache

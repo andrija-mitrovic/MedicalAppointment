@@ -12,5 +12,7 @@ namespace MedicalAppointment.Core
 
             return services;
         }
+
+
     }
 }
