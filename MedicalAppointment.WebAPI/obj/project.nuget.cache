@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0voeePqgnM15wXX7woLG8zTzZ4rYlj8SJfDPI6mMZdRIYxPuVy6ginRLPgmGrAD+RMV4Crh44EvcPtitFEVxFA==",
+  "dgSpecHash": "eK5zZ04SNTb1seELuC/RLu38OpaYGjA3wadv9oeGM36i/NtTGLQ9/y/wPVZ9nRzn8UsyEry+FdeQV4zgZ2VytA==",
   "success": true,
   "projectFilePath": "D:\\Projects\\ASP NET Core Angular\\MedicalAppointment\\MedicalAppointment.WebAPI\\MedicalAppointment.WebAPI.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.authentication.cookies\\2.2.0\\microsoft.aspnetcore.authentication.cookies.2.2.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
+    "C:\\Users\\ANDRIJA\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.8\\microsoft.aspnetcore.authentication.jwtbearer.3.1.8.nupkg.sha512",
     "C:\\Users\\ANDRIJA\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.8\\microsoft.aspnetcore.cryptography.internal.3.1.8.nupkg.sha512",
     "C:\\Users\\ANDRIJA\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.8\\microsoft.aspnetcore.cryptography.keyderivation.3.1.8.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.dataprotection\\2.2.0\\microsoft.aspnetcore.dataprotection.2.2.0.nupkg.sha512",

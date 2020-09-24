@@ -31,6 +31,7 @@ namespace MedicalAppointment.WebAPI
             services.AddCore();
             services.AddInfrastructure(Configuration);
             services.ConfigureControllers();
+            services.ConfigureAuthentication(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
