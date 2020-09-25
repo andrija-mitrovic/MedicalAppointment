@@ -69,3 +69,5 @@ D:\Projects\ASP NET Core Angular\MedicalAppointment\MedicalAppointment.WebAPI\bi
 D:\Projects\ASP NET Core Angular\MedicalAppointment\MedicalAppointment.WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\Projects\ASP NET Core Angular\MedicalAppointment\MedicalAppointment.WebAPI\obj\Debug\netcoreapp3.1\MedicalAppointment.WebAPI.csproj.CoreCompileInputs.cache
 D:\Projects\ASP NET Core Angular\MedicalAppointment\MedicalAppointment.WebAPI\obj\Debug\netcoreapp3.1\MedicalAppointment.WebAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\Projects\ASP NET Core Angular\MedicalAppointment\MedicalAppointment.WebAPI\bin\Debug\netcoreapp3.1\AutoMapper.dll
+D:\Projects\ASP NET Core Angular\MedicalAppointment\MedicalAppointment.WebAPI\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

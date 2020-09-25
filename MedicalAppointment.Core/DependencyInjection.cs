@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Reflection;
+using AutoMapper;
 using MedicalAppointment.Core.Interfaces;
 using MedicalAppointment.Core.Services;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,6 +11,7 @@ namespace MedicalAppointment.Core
         public static IServiceCollection AddCore(this IServiceCollection services)
         {
             services.ConfigureInjection();
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             return services;
         }
