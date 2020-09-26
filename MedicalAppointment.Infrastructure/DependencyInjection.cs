@@ -37,7 +37,7 @@ namespace MedicalAppointment.Infrastructure
             builder.AddEntityFrameworkStores<ApplicationDbContext>();
             builder.AddRoleValidator<RoleValidator<Role>>();
             builder.AddRoleManager<RoleManager<Role>>();
-            //builder.AddSignInManager<SignInManager<User>>();
+            builder.AddSignInManager<SignInManager<User>>();
         }
 
         private static void ConfigureDatabase(this IServiceCollection services, IConfiguration config)
