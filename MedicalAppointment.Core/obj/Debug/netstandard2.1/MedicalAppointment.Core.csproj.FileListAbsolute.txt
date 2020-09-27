@@ -6,4 +6,3 @@ D:\Projects\ASP NET Core Angular\MedicalAppointment\MedicalAppointment.Core\obj\
 D:\Projects\ASP NET Core Angular\MedicalAppointment\MedicalAppointment.Core\obj\Debug\netstandard2.1\MedicalAppointment.Core.dll
 D:\Projects\ASP NET Core Angular\MedicalAppointment\MedicalAppointment.Core\obj\Debug\netstandard2.1\MedicalAppointment.Core.pdb
 D:\Projects\ASP NET Core Angular\MedicalAppointment\MedicalAppointment.Core\obj\Debug\netstandard2.1\MedicalAppointment.Core.csproj.CoreCompileInputs.cache
-D:\Projects\ASP NET Core Angular\MedicalAppointment\MedicalAppointment.Core\obj\Debug\netstandard2.1\MedicalAppointment.Core.csprojAssemblyReference.cache
