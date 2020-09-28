@@ -9,5 +9,6 @@ namespace MedicalAppointment.Core.Models
         public int DepartmentId { get; set; }
         public string Name { get; set; }
         public ICollection<Doctor> Doctors { get; set; }
+        public ICollection<Appointment> Appointments { get; set; }
     }
 }

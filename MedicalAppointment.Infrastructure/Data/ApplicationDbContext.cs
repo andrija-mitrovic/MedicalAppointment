@@ -13,6 +13,12 @@ namespace MedicalAppointment.Infrastructure.Data
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options):base(options) { }
 
+        public DbSet<Doctor> Doctors { get; set; }
+        public DbSet<Patient> Patients { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<BloodGroup> BloodGroups { get; set; }
+        public DbSet<Appointment> Appointments { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
