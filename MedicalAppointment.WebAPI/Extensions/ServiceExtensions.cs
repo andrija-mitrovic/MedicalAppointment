@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -30,7 +32,14 @@ namespace MedicalAppointment.WebAPI.Extensions
 
         public static void ConfigureControllers(this IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers(options =>
+            {
+                var policy = new AuthorizationPolicyBuilder()
+                    .RequireAuthenticatedUser()
+                    .Build();
+
+                options.Filters.Add(new AuthorizeFilter(policy));
+            });
         }
     }
 }

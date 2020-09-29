@@ -3,11 +3,13 @@ using AutoMapper;
 using MedicalAppointment.Core.DTOs;
 using MedicalAppointment.Core.Interfaces;
 using MedicalAppointment.Core.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedicalAppointment.WebAPI.Controllers
 {
+    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
     public class AuthController : ControllerBase
