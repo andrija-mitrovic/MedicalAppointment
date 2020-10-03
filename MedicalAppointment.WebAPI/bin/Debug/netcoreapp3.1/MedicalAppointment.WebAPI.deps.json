@@ -27,6 +27,7 @@
           "MedicalAppointment.Core": "1.0.0",
           "MedicalAppointment.Infrastructure": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.8",
+          "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "3.1.8",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.8",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions.Reference": "3.1.0.0",
@@ -171,7 +172,7 @@
           "System": "4.0.0.0",
           "System.Drawing": "4.0.0.0",
           "System.Drawing.Primitives": "4.2.1.0",
-          "System.Dynamic.Runtime.Reference": "4.1.2.0",
+          "System.Dynamic.Runtime": "4.1.2.0",
           "System.Globalization.Calendars": "4.1.2.0",
           "System.Globalization.Reference": "4.1.2.0",
           "System.Globalization.Extensions.Reference": "4.1.2.0",
@@ -189,7 +190,7 @@
           "System.IO.Pipes": "4.1.2.0",
           "System.IO.UnmanagedMemoryStream": "4.1.2.0",
           "System.Linq.Reference": "4.2.2.0",
-          "System.Linq.Expressions.Reference": "4.2.2.0",
+          "System.Linq.Expressions": "4.2.2.0",
           "System.Linq.Parallel": "4.0.4.0",
           "System.Linq.Queryable": "4.0.4.0",
           "System.Memory": "4.2.1.0",
@@ -212,7 +213,7 @@
           "System.Net.WebSockets": "4.1.2.0",
           "System.Numerics": "4.0.0.0",
           "System.Numerics.Vectors": "4.1.6.0",
-          "System.ObjectModel.Reference": "4.1.2.0",
+          "System.ObjectModel": "4.1.2.0",
           "System.Reflection.DispatchProxy": "4.0.6.0",
           "System.Reflection.Reference": "4.2.2.0",
           "System.Reflection.Emit.Reference": "4.1.2.0",
@@ -235,7 +236,7 @@
           "System.Runtime.InteropServices.WindowsRuntime": "4.0.4.0",
           "System.Runtime.Intrinsics": "4.0.1.0",
           "System.Runtime.Loader": "4.1.1.0",
-          "System.Runtime.Numerics.Reference": "4.1.2.0",
+          "System.Runtime.Numerics": "4.1.2.0",
           "System.Runtime.Serialization": "4.0.0.0",
           "System.Runtime.Serialization.Formatters.Reference": "4.0.4.0",
           "System.Runtime.Serialization.Json.Reference": "4.0.5.0",
@@ -468,6 +469,37 @@
         },
         "compile": {
           "lib/netcoreapp3.1/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.JsonPatch/3.1.8": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "Newtonsoft.Json": "12.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.dll": {
+            "assemblyVersion": "3.1.8.0",
+            "fileVersion": "3.100.820.42106"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.NewtonsoftJson/3.1.8": {
+        "dependencies": {
+          "Microsoft.AspNetCore.JsonPatch": "3.1.8",
+          "Newtonsoft.Json": "12.0.2",
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll": {
+            "assemblyVersion": "3.1.8.0",
+            "fileVersion": "3.100.820.42106"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll": {}
         }
       },
       "Microsoft.AspNetCore.WebUtilities/2.2.0": {
@@ -882,7 +914,7 @@
       "Microsoft.IdentityModel.Protocols.OpenIdConnect/5.5.0": {
         "dependencies": {
           "Microsoft.IdentityModel.Protocols": "5.5.0",
-          "Newtonsoft.Json": "10.0.1",
+          "Newtonsoft.Json": "12.0.2",
           "System.IdentityModel.Tokens.Jwt": "6.7.1"
         },
         "runtime": {
@@ -928,43 +960,29 @@
           "ref/netstandard2.0/Microsoft.Win32.Registry.dll": {}
         }
       },
-      "Newtonsoft.Json/10.0.1": {
-        "dependencies": {
-          "Microsoft.CSharp": "4.7.0",
-          "System.Collections": "4.3.0",
-          "System.ComponentModel.TypeConverter": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Dynamic.Runtime": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Linq.Expressions": "4.3.0",
-          "System.ObjectModel": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Extensions": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Runtime.Numerics": "4.3.0",
-          "System.Runtime.Serialization.Formatters": "4.3.0",
-          "System.Runtime.Serialization.Primitives": "4.3.0",
-          "System.Text.Encoding": "4.3.0",
-          "System.Text.Encoding.Extensions": "4.3.0",
-          "System.Text.RegularExpressions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Threading.Tasks": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0",
-          "System.Xml.XDocument": "4.3.0",
-          "System.Xml.XmlDocument": "4.3.0"
-        },
+      "Newtonsoft.Json/12.0.2": {
         "runtime": {
-          "lib/netstandard1.3/Newtonsoft.Json.dll": {
-            "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1.20720"
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.2.23222"
           }
         },
         "compile": {
-          "lib/netstandard1.3/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.2.22727"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {}
         }
       },
       "runtime.native.System/4.3.0": {
@@ -1141,24 +1159,6 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Dynamic.Runtime/4.3.0": {
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Linq.Expressions": "4.3.0",
-          "System.ObjectModel": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Emit": "4.7.0",
-          "System.Reflection.Emit.ILGeneration": "4.3.0",
-          "System.Reflection.Primitives": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Threading": "4.3.0"
-        }
-      },
       "System.Globalization/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0",
@@ -1226,27 +1226,6 @@
           "System.Runtime.Extensions": "4.3.0"
         }
       },
-      "System.Linq.Expressions/4.3.0": {
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.ObjectModel": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Emit": "4.7.0",
-          "System.Reflection.Emit.ILGeneration": "4.3.0",
-          "System.Reflection.Emit.Lightweight": "4.3.0",
-          "System.Reflection.Extensions": "4.3.0",
-          "System.Reflection.Primitives": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Threading": "4.3.0"
-        }
-      },
       "System.Net.NameResolution/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0",
@@ -1271,15 +1250,6 @@
           "Microsoft.NETCore.Targets": "1.1.0",
           "System.Runtime": "4.3.0",
           "System.Runtime.Handles": "4.3.0"
-        }
-      },
-      "System.ObjectModel/4.3.0": {
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Threading": "4.3.0"
         }
       },
       "System.Private.DataContractSerialization/4.3.0": {
@@ -1421,14 +1391,6 @@
           "System.Reflection.Primitives": "4.3.0",
           "System.Runtime": "4.3.0",
           "System.Runtime.Handles": "4.3.0"
-        }
-      },
-      "System.Runtime.Numerics/4.3.0": {
-        "dependencies": {
-          "System.Globalization": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0"
         }
       },
       "System.Runtime.Serialization.Formatters/4.3.0": {
@@ -2541,7 +2503,7 @@
         },
         "compileOnly": true
       },
-      "System.Dynamic.Runtime.Reference/4.1.2.0": {
+      "System.Dynamic.Runtime/4.1.2.0": {
         "compile": {
           "System.Dynamic.Runtime.dll": {}
         },
@@ -2649,7 +2611,7 @@
         },
         "compileOnly": true
       },
-      "System.Linq.Expressions.Reference/4.2.2.0": {
+      "System.Linq.Expressions/4.2.2.0": {
         "compile": {
           "System.Linq.Expressions.dll": {}
         },
@@ -2787,7 +2749,7 @@
         },
         "compileOnly": true
       },
-      "System.ObjectModel.Reference/4.1.2.0": {
+      "System.ObjectModel/4.1.2.0": {
         "compile": {
           "System.ObjectModel.dll": {}
         },
@@ -2925,7 +2887,7 @@
         },
         "compileOnly": true
       },
-      "System.Runtime.Numerics.Reference/4.1.2.0": {
+      "System.Runtime.Numerics/4.1.2.0": {
         "compile": {
           "System.Runtime.Numerics.dll": {}
         },
@@ -3360,6 +3322,20 @@
       "path": "microsoft.aspnetcore.identity.entityframeworkcore/3.1.8",
       "hashPath": "microsoft.aspnetcore.identity.entityframeworkcore.3.1.8.nupkg.sha512"
     },
+    "Microsoft.AspNetCore.JsonPatch/3.1.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VyY44zszuKBJ/rsbcgIKu1NjRPr2CKdmQrs75yR+YaEiD8WEWnbqoxw5DO8iQBFCKb1z4Xs5Jzc5p0b41PNRmg==",
+      "path": "microsoft.aspnetcore.jsonpatch/3.1.8",
+      "hashPath": "microsoft.aspnetcore.jsonpatch.3.1.8.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Mvc.NewtonsoftJson/3.1.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xlYBboQAji96pWvrH5sDqOJSOGnB4zEWXrJrqiRBEWxmAWgWziRG0jQcg7S9SDPYLfvsIukDjI20LSyjxBBDCA==",
+      "path": "microsoft.aspnetcore.mvc.newtonsoftjson/3.1.8",
+      "hashPath": "microsoft.aspnetcore.mvc.newtonsoftjson.3.1.8.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.WebUtilities/2.2.0": {
       "type": "package",
       "serviceable": true,
@@ -3633,12 +3609,19 @@
       "path": "microsoft.win32.registry/4.5.0",
       "hashPath": "microsoft.win32.registry.4.5.0.nupkg.sha512"
     },
-    "Newtonsoft.Json/10.0.1": {
+    "Newtonsoft.Json/12.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ebWzW9j2nwxQeBo59As2TYn7nYr9BHicqqCwHOD1Vdo+50HBtLPuqdiCYJcLdTRknpYis/DSEOQz5KmZxwrIAg==",
-      "path": "newtonsoft.json/10.0.1",
-      "hashPath": "newtonsoft.json.10.0.1.nupkg.sha512"
+      "sha512": "sha512-rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
+      "path": "newtonsoft.json/12.0.2",
+      "hashPath": "newtonsoft.json.12.0.2.nupkg.sha512"
+    },
+    "Newtonsoft.Json.Bson/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QYFyxhaABwmq3p/21VrZNYvCg3DaEoN/wUuw5nmfAf0X3HLjgupwhkEWdgfb9nvGAUIv3osmZoD3kKl4jxEmYQ==",
+      "path": "newtonsoft.json.bson/1.0.2",
+      "hashPath": "newtonsoft.json.bson.1.0.2.nupkg.sha512"
     },
     "runtime.native.System/4.3.0": {
       "type": "package",
@@ -3780,13 +3763,6 @@
       "path": "system.diagnostics.tracing/4.3.0",
       "hashPath": "system.diagnostics.tracing.4.3.0.nupkg.sha512"
     },
-    "System.Dynamic.Runtime/4.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-CBGveikTt96CwzOKFFF0Ozn3SVMlLhtvznnNTfAgy07qsQ/jZ+5qXwZhathvAYYG4Mt73hiUIybyGjaj3kQagA==",
-      "path": "system.dynamic.runtime/4.3.0",
-      "hashPath": "system.dynamic.runtime.4.3.0.nupkg.sha512"
-    },
     "System.Globalization/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -3836,13 +3812,6 @@
       "path": "system.linq/4.3.0",
       "hashPath": "system.linq.4.3.0.nupkg.sha512"
     },
-    "System.Linq.Expressions/4.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-cYXcI7g3g7DYEw136AKp509axLJhzk+C84zMkGjoelHxf/ZxeMPliY7meiOlRj3ijpwHk1dWFnOpfSasjpPXnw==",
-      "path": "system.linq.expressions/4.3.0",
-      "hashPath": "system.linq.expressions.4.3.0.nupkg.sha512"
-    },
     "System.Net.NameResolution/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -3856,13 +3825,6 @@
       "sha512": "sha512-F4vzZbL5gaOUiTM0DmP5UcaYt6vdZHJ1u3BhOHxot24b/VZphBBCusdOn+vZFbSfMX5xQCFGfgH3IwHWojRq0Q==",
       "path": "system.net.primitives/4.3.0",
       "hashPath": "system.net.primitives.4.3.0.nupkg.sha512"
-    },
-    "System.ObjectModel/4.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-9Q2Wa8iekPjLAbqoalrIu/5prGLIhIcP5qaFr152Ey3ZUudAnvRp+6S9Kcd/w41/RViLpvLfCPcgSEi10yQOyw==",
-      "path": "system.objectmodel/4.3.0",
-      "hashPath": "system.objectmodel.4.3.0.nupkg.sha512"
     },
     "System.Private.DataContractSerialization/4.3.0": {
       "type": "package",
@@ -3968,13 +3930,6 @@
       "sha512": "sha512-EZf+5sNkvNcvJsRqDNhcO1afBkcaCYlI97u5kpaCCWKnVEj6lkHBUcM8/i+gL+soz+NEArTqlYMorZqNme2z4w==",
       "path": "system.runtime.interopservices/4.3.0",
       "hashPath": "system.runtime.interopservices.4.3.0.nupkg.sha512"
-    },
-    "System.Runtime.Numerics/4.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-GLXkri1D+xiu+MWvFGOxF4LJqwlPJNXeHSK1UzwUvlzIqsL8mnN5C0mmvxpKOdzs08n9qxjymJhJjq84fi3jMQ==",
-      "path": "system.runtime.numerics/4.3.0",
-      "hashPath": "system.runtime.numerics.4.3.0.nupkg.sha512"
     },
     "System.Runtime.Serialization.Formatters/4.3.0": {
       "type": "package",
@@ -4869,7 +4824,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Dynamic.Runtime.Reference/4.1.2.0": {
+    "System.Dynamic.Runtime/4.1.2.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -4959,7 +4914,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Linq.Expressions.Reference/4.2.2.0": {
+    "System.Linq.Expressions/4.2.2.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -5074,7 +5029,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.ObjectModel.Reference/4.1.2.0": {
+    "System.ObjectModel/4.1.2.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -5189,7 +5144,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Runtime.Numerics.Reference/4.1.2.0": {
+    "System.Runtime.Numerics/4.1.2.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""

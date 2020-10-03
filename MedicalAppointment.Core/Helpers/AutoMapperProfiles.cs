@@ -17,6 +17,12 @@ namespace MedicalAppointment.Core.Helpers
             CreateMap<BloodGroupUpdateDto, BloodGroup>();
             CreateMap<BloodGroupCreateDto, BloodGroup>();
             CreateMap<BloodGroup, BloodGroupDetailDto>();
+            CreateMap<DepartmentCreateDto, Department>();
+            CreateMap<DepartmentUpdateDto, Department>();
+            CreateMap<Department, DepartmentDetailDto>();
+            CreateMap<DoctorCreateDto, Doctor>();
+            CreateMap<DoctorUpdateDto, Doctor>();
+            CreateMap<Doctor, DoctorDetailDto>();
         }
     }
 }

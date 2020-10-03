@@ -6,6 +6,7 @@ namespace MedicalAppointment.Core.DTOs
 {
     public class DepartmentDetailDto
     {
+        public int DepartmentId { get; set; }
         public string Name { get; set; }
     }
 }

@@ -39,6 +39,10 @@ namespace MedicalAppointment.WebAPI.Extensions
                     .Build();
 
                 options.Filters.Add(new AuthorizeFilter(policy));
+            }).AddNewtonsoftJson().AddNewtonsoftJson(opt=>
+            {
+                opt.SerializerSettings.ReferenceLoopHandling =
+                Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
         }
     }

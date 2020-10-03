@@ -74,6 +74,8 @@ namespace MedicalAppointment.WebAPI.Controllers
 
             _mapper.Map(departmentUpdateDto, department);
 
+            _unitOfWork.Departments.Update(department);
+
             if (await _unitOfWork.SaveAsync())
                 return NoContent();
 

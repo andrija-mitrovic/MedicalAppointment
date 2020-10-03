@@ -74,6 +74,8 @@ namespace MedicalAppointment.WebAPI.Controllers
 
             _mapper.Map(bloodGroupUpdateDto, bloodGroup);
 
+            _unitOfWork.BloodGroups.Update(bloodGroup);
+
             if (await _unitOfWork.SaveAsync())
                 return NoContent();
 
