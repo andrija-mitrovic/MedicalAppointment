@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace MedicalAppointment.Core.DTOs
+namespace MedicalAppointment.Core.DTOs.User
 {
     public class UserRegisterDto
     {

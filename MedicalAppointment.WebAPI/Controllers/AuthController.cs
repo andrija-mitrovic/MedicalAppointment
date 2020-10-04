@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using AutoMapper;
-using MedicalAppointment.Core.DTOs;
+using MedicalAppointment.Core.DTOs.Doctor;
 using MedicalAppointment.Core.Interfaces;
 using MedicalAppointment.Core.Models;
 using Microsoft.AspNetCore.Authorization;

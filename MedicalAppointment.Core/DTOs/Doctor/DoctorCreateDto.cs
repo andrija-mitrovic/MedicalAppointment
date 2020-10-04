@@ -1,13 +1,11 @@
-﻿using MedicalAppointment.Core.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MedicalAppointment.Core.DTOs
+namespace MedicalAppointment.Core.DTOs.Doctor
 {
-    public class DoctorDetailDto
+    public class DoctorCreateDto
     {
-        public int DoctorId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string PhoneNumber { get; set; }
@@ -15,6 +13,6 @@ namespace MedicalAppointment.Core.DTOs
         public string Education { get; set; }
         public string Designation { get; set; }
         public string Gender { get; set; }
-        public DepartmentDetailDto Department { get; set; }
+        public int DepartmentId { get; set; }
     }
 }

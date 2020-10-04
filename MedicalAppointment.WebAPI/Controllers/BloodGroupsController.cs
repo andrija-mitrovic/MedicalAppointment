@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using MedicalAppointment.Core.DTOs;
+using MedicalAppointment.Core.DTOs.BloodGroup;
 using MedicalAppointment.Core.Interfaces;
 using MedicalAppointment.Core.Models;
 using Microsoft.AspNetCore.Mvc;

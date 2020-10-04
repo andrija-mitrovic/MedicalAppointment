@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using MedicalAppointment.Core.DTOs;
+using MedicalAppointment.Core.DTOs.Doctor;
 using MedicalAppointment.Core.Interfaces;
 using MedicalAppointment.Core.Models;
 using Microsoft.AspNetCore.Http;

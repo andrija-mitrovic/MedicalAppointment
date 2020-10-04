@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MedicalAppointment.Core.DTOs
+namespace MedicalAppointment.Core.DTOs.BloodGroup
 {
-    public class DepartmentUpdateDto
+    public class BloodGroupUpdateDto
     {
         public string Name { get; set; }
     }
