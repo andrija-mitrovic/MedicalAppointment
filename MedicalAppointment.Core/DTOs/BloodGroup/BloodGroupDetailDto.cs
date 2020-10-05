@@ -6,6 +6,7 @@ namespace MedicalAppointment.Core.DTOs.BloodGroup
 {
     public class BloodGroupDetailDto
     {
+        public int DepartmentId { get; set; }
         public string Name { get; set; }
     }
 }

@@ -1,5 +1,8 @@
 ﻿using AutoMapper;
-using MedicalAppointment.Core.DTOs;
+using MedicalAppointment.Core.DTOs.BloodGroup;
+using MedicalAppointment.Core.DTOs.Department;
+using MedicalAppointment.Core.DTOs.Doctor;
+using MedicalAppointment.Core.DTOs.User;
 using MedicalAppointment.Core.Models;
 using System;
 using System.Collections.Generic;
@@ -14,12 +17,15 @@ namespace MedicalAppointment.Core.Helpers
             CreateMap<UserRegisterDto, User>();
             CreateMap<UserLoginDto, User>();
             CreateMap<User, UserDetailDto>();
+
             CreateMap<BloodGroupUpdateDto, BloodGroup>();
             CreateMap<BloodGroupCreateDto, BloodGroup>();
             CreateMap<BloodGroup, BloodGroupDetailDto>();
+
             CreateMap<DepartmentCreateDto, Department>();
             CreateMap<DepartmentUpdateDto, Department>();
             CreateMap<Department, DepartmentDetailDto>();
+
             CreateMap<DoctorCreateDto, Doctor>();
             CreateMap<DoctorUpdateDto, Doctor>();
             CreateMap<Doctor, DoctorDetailDto>();
