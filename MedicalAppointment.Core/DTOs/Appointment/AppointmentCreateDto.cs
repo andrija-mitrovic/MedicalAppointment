@@ -2,18 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MedicalAppointment.Core.Models
+namespace MedicalAppointment.Core.DTOs.Appointment
 {
-    public class Appointment
+    public class AppointmentCreateDto
     {
-        public int AppointmentId { get; set; }
         public DateTime AppointmentDate { get; set; }
         public string Symptoms { get; set; }
         public int PatientId { get; set; }
-        public Patient Patient { get; set; }
         public int DoctorId { get; set; }
-        public Doctor Doctor { get; set; }
         public int DepartmentId { get; set; }
-        public Department Department { get; set; }
     }
 }

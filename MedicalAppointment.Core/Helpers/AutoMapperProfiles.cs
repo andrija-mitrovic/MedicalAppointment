@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
+using MedicalAppointment.Core.DTOs.Appointment;
 using MedicalAppointment.Core.DTOs.BloodGroup;
 using MedicalAppointment.Core.DTOs.Department;
 using MedicalAppointment.Core.DTOs.Doctor;
+using MedicalAppointment.Core.DTOs.Patient;
 using MedicalAppointment.Core.DTOs.User;
 using MedicalAppointment.Core.Models;
 using System;
@@ -29,6 +31,14 @@ namespace MedicalAppointment.Core.Helpers
             CreateMap<DoctorCreateDto, Doctor>();
             CreateMap<DoctorUpdateDto, Doctor>();
             CreateMap<Doctor, DoctorDetailDto>();
+
+            CreateMap<PatientCreateDto, Patient>();
+            CreateMap<PatientUpdateDto, Patient>();
+            CreateMap<Patient, PatientDetailDto>();
+
+            CreateMap<AppointmentCreateDto, Appointment>();
+            CreateMap<AppointmentUpdateDto, Appointment>();
+            CreateMap<Appointment, AppointmentDetailDto>();
         }
     }
 }

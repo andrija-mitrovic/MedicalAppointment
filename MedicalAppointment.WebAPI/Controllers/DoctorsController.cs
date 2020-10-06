@@ -41,7 +41,7 @@ namespace MedicalAppointment.WebAPI.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetDoctor(int id)
         {
-            var doctor = await _unitOfWork.Doctors.GetDoctorWithDepartment(id);
+            var doctor = await _unitOfWork.Doctors.GetDoctorWithDepartmentById(id);
 
             if (doctor == null)
                 return NotFound();
@@ -88,7 +88,7 @@ namespace MedicalAppointment.WebAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteDoctor(int id)
         {
-            var doctor = await _unitOfWork.Doctors.GetDoctorWithDepartment(id);
+            var doctor = await _unitOfWork.Doctors.GetDoctorWithDepartmentById(id);
 
             if (doctor == null)
                 return NotFound();

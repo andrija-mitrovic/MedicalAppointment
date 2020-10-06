@@ -17,7 +17,7 @@ namespace MedicalAppointment.Infrastructure.Data.Repositories
             return await _context.Doctors.Include(x => x.Department).ToListAsync();
         }
 
-        public async Task<Doctor> GetDoctorWithDepartment(int id)
+        public async Task<Doctor> GetDoctorWithDepartmentById(int id)
         {
             return await _context.Doctors.Include(x => x.Department).FirstOrDefaultAsync(x => x.DoctorId == id);
         }

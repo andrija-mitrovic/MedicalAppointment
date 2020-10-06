@@ -9,6 +9,6 @@ namespace MedicalAppointment.Core.Interfaces
     public interface IDoctorRepository:IGenericRepository<Doctor>
     {
         Task<IEnumerable<Doctor>> GetDoctorsWithDepartment();
-        Task<Doctor> GetDoctorWithDepartment(int id);
+        Task<Doctor> GetDoctorWithDepartmentById(int id);
     }
 }

@@ -1,4 +1,5 @@
-﻿using MedicalAppointment.Core.DTOs.Department;
+﻿using MedicalAppointment.Core.DTOs.Appointment;
+using MedicalAppointment.Core.DTOs.Department;
 using MedicalAppointment.Core.Models;
 using System;
 using System.Collections.Generic;

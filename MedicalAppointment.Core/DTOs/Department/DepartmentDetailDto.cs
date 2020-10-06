@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MedicalAppointment.Core.DTOs.Appointment;
+using MedicalAppointment.Core.DTOs.Doctor;
+using System;
 using System.Collections.Generic;
 using System.Text;
 

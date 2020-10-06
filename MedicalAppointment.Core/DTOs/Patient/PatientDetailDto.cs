@@ -1,4 +1,5 @@
-﻿using MedicalAppointment.Core.DTOs.BloodGroup;
+﻿using MedicalAppointment.Core.DTOs.Appointment;
+using MedicalAppointment.Core.DTOs.BloodGroup;
 using System;
 using System.Collections.Generic;
 using System.Text;
