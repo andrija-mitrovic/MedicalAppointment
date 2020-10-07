@@ -38,7 +38,7 @@ namespace MedicalAppointment.WebAPI.Controllers
         }
 
         // GET: api/appointments/5
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetAppointment")]
         public async Task<IActionResult> GetAppointment(int id)
         {
             var appointment = await _unitOfWork.Appointments.GetAppointmentWithPatientDoctorDepartmentById(id);
@@ -56,7 +56,10 @@ namespace MedicalAppointment.WebAPI.Controllers
             await _unitOfWork.Appointments.AddAsync(appointment);
 
             if (await _unitOfWork.SaveAsync())
-                return StatusCode(201);
+            {
+                var appointmentToReturn = _mapper.Map<AppointmentReturnDto>(appointment);
+                return CreatedAtRoute("GetAppointment", new { id = appointment.AppointmentId}, appointmentToReturn);
+            }
 
             throw new Exception("Creating appointment failed on save");
         }

@@ -39,6 +39,7 @@ namespace MedicalAppointment.Core.Helpers
             CreateMap<AppointmentCreateDto, Appointment>();
             CreateMap<AppointmentUpdateDto, Appointment>();
             CreateMap<Appointment, AppointmentDetailDto>();
+            CreateMap<Appointment, AppointmentReturnDto>();
         }
     }
 }

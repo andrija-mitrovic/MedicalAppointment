@@ -36,7 +36,7 @@ namespace MedicalAppointment.WebAPI.Controllers
         }
 
         // GET: api/BloodGroups/5
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetBloodGroup")]
         public async Task<IActionResult> GetBloodGroup(int id)
         {
             var bloodGroup = await _unitOfWork.BloodGroups.GetByIdAsync(id);
@@ -58,7 +58,10 @@ namespace MedicalAppointment.WebAPI.Controllers
             await _unitOfWork.BloodGroups.AddAsync(bloodGroup);
 
             if (await _unitOfWork.SaveAsync())
-                return StatusCode(201);
+            {
+                var bloodGroupToReturn = _mapper.Map<BloodGroupDetailDto>(bloodGroup);
+                return CreatedAtRoute("GetBloodGroup", new { id = bloodGroup.BloodGroupId }, bloodGroupToReturn);
+            }
 
             throw new Exception("Creating blood group failed on save");
         }
