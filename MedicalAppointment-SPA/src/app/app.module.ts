@@ -1,26 +1,33 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { JwtModule } from '@auth0/angular-jwt/lib/angular-jwt.module';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 
-export function tokenGetter() {
-  return localStorage.getItem('token');
-}
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { AppRoutingModule } from './app.routing';
+import { ComponentsModule } from './components/components.module';
+
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
-    BrowserModule,
-    JwtModule.forRoot({
-      config: {
-        tokenGetter: tokenGetter,
-        whitelistedDomains: ['localhost:5000'],
-        blacklistedRoutes: ['localhost:5000/api/auth']
-      }
-    })
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule,
+    ComponentsModule,
+    NgbModule,
+    RouterModule,
+    AppRoutingModule
+  ],
+  declarations: [
+    AppComponent,
+    AdminLayoutComponent,
+    AuthLayoutComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
