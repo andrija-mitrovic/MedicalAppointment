@@ -20,7 +20,7 @@ getDoctors(){
 }
 
 createDoctor(doctor: Doctor){
-  return this.httpClient.post(this.baseUrl+'doctors/', doctor);
+  return this.httpClient.post(this.baseUrl+'doctors', doctor);
 }
 
 updateDoctor(id: number, doctor: Doctor){

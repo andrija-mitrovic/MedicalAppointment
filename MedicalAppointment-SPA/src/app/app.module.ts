@@ -13,6 +13,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { DoctorService } from './_services/doctor.service';
+import { PatientService } from './_services/patient.service';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { DoctorService } from './_services/doctor.service';
     AuthLayoutComponent
   ],
   providers: [
-    DoctorService
+    DoctorService,
+    PatientService
   ],
   bootstrap: [AppComponent]
 })
