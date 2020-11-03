@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { DoctorService } from './_services/doctor.service';
 import { PatientService } from './_services/patient.service';
+import { DepartmentService } from './_services/department.service';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { PatientService } from './_services/patient.service';
   ],
   providers: [
     DoctorService,
-    PatientService
+    PatientService,
+    DepartmentService
   ],
   bootstrap: [AppComponent]
 })
