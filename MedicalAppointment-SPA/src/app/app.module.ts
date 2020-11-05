@@ -15,6 +15,8 @@ import { ComponentsModule } from './components/components.module';
 import { DoctorService } from './_services/doctor.service';
 import { PatientService } from './_services/patient.service';
 import { DepartmentService } from './_services/department.service';
+import { AppointmentService } from './_services/appointment.service';
+import { BloodGroupService } from './_services/bloodGroup.service';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { DepartmentService } from './_services/department.service';
   providers: [
     DoctorService,
     PatientService,
-    DepartmentService
+    DepartmentService,
+    AppointmentService,
+    BloodGroupService
   ],
   bootstrap: [AppComponent]
 })
