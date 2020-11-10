@@ -1,6 +1,6 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -17,6 +17,7 @@ import { PatientService } from './_services/patient.service';
 import { DepartmentService } from './_services/department.service';
 import { AppointmentService } from './_services/appointment.service';
 import { BloodGroupService } from './_services/bloodGroup.service';
+import { AuthService } from './_services/auth.service';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { BloodGroupService } from './_services/bloodGroup.service';
     ComponentsModule,
     NgbModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [
     AppComponent,
@@ -39,7 +41,8 @@ import { BloodGroupService } from './_services/bloodGroup.service';
     PatientService,
     DepartmentService,
     AppointmentService,
-    BloodGroupService
+    BloodGroupService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
