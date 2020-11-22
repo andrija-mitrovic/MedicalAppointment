@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Z6ars7L8dBRP6r8rKTPeyaa9kpGIepwIAL5Nty0dwOc5uRX3Ar5NkshhGBbejlkV33UcyFjP0/w0qI+7LWNAfw==",
+  "dgSpecHash": "BoIgrX379FWERDHdO83TwlXfgLn6AMzc/qFLZqElo0w+p6H0Qu1vpZ0D94NDJDOVS5+8awosQea71YpvkU35SQ==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\ASP NET Core Angular\\MedicalAppointment\\MedicalAppointment.WebAPI\\MedicalAppointment.WebAPI.csproj",
+  "projectFilePath": "D:\\Projects\\ASP NET Core Angular\\MedicalAppointment\\medicalappointment.webapi\\MedicalAppointment.WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ANDRIJA\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
     "C:\\Users\\ANDRIJA\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.0.1\\automapper.extensions.microsoft.dependencyinjection.8.0.1.nupkg.sha512",
