@@ -38,7 +38,7 @@
           <div class="text-center text-muted mb-4">
             <small>Or sign up with credentials</small>
           </div>
-          <form [formGroup]="registerForm">
+          <form [formGroup]="registerForm" (ngSubmit)="register()">
             <div class="form-group" class="text-center mb-3">
               <label class="radio-inline">
                 <input class="mr-3" type="radio" value="male" formControlName="gender">Male
@@ -68,8 +68,8 @@
                 <input class="form-control"
                   [ngClass]="{'is-invalid': registerForm.get('dateOfBirth').errors 
                   && registerForm.get('dateOfBirth').touched}"
-                  formControlName="dateOfBirth" placeholder="Date of birth" type="text">
-                <span class="invalid-feedback">Date of birth is required</span>
+                  formControlName="dateOfBirth" placeholder="Date of birth" type="date">
+                <span class="invalid-feedback">Date of Birth is required</span>
               </div>
             </div>
             <div class="form-group">
@@ -96,7 +96,7 @@
               </div>
             </div>
             <div class="text-center">
-              <button type="button" class="btn btn-primary mt-4">Create account</button>
+              <button type="submit" class="btn btn-primary mt-4">Create account</button>
             </div>
           </form>
         </div>
