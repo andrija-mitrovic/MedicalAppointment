@@ -18,6 +18,7 @@ import { DepartmentService } from './_services/department.service';
 import { AppointmentService } from './_services/appointment.service';
 import { BloodGroupService } from './_services/bloodGroup.service';
 import { AuthService } from './_services/auth.service';
+import { ErrorInterceptorProvider } from './_services/error.interceptor';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -48,6 +49,7 @@ export function tokenGetter() {
   ],
   providers: [
     DoctorService,
+    ErrorInterceptorProvider,
     PatientService,
     DepartmentService,
     AppointmentService,
