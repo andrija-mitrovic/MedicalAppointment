@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/_models/user';
+import { AlertifyService } from 'src/app/_services/alertify.service';
 import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(private auth: AuthService,
               private fb: FormBuilder,
-              private router: Router) { }
+              private router: Router,
+              private alertify: AlertifyService) { }
 
   ngOnInit() {
     this.createRegisterForm();
@@ -34,13 +36,9 @@ export class RegisterComponent implements OnInit {
     if(this.registerForm.valid) {
       this.user = Object.assign({}, this.registerForm.value);
       this.auth.register(this.user).subscribe(() => {
-        console.log('Registration successful');
+        this.router.navigate(['/employees']);
       }, error => {
-        console.log(error);
-      },() => {
-        this.auth.login(this.user).subscribe(() => {
-          this.router.navigate(['/employees']);
-        });
+        this.alertify.error(error);
       });
     }
   }

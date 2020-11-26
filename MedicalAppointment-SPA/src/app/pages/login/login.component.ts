@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertifyService } from 'src/app/_services/alertify.service';
 import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
@@ -11,7 +12,8 @@ export class LoginComponent implements OnInit, OnDestroy {
   model: any = {};
   
   constructor(private authService: AuthService,
-              private router: Router) {}
+              private router: Router,
+              private alertify: AlertifyService) {}
 
   ngOnInit() {
   }
@@ -20,12 +22,10 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   login() {
     this.authService.login(this.model).subscribe(()=>{
-      console.log('Successfully logged');
-    }, error => {
-      console.log(error);
-    }, () => {
       this.router.navigate(['/dashboard'])
-    })
+    }, error => {
+      this.alertify.error(error);
+    });
   }
 
 
