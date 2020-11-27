@@ -12,9 +12,9 @@
     </div>
   </div>
 </div>
-<div class="container-fluid mt--7">
+<div class="container-fluid mt--9">
   <div class="row">
-    <div class=" offset-md-2 col-xl-8">
+    <div class="offset-md-2 col-xl-8">
       <div class="card bg-secondary shadow">
         <div class="card-header bg-white border-0">
           <div class="row align-items-center">
@@ -24,38 +24,63 @@
           </div>
         </div>
         <div class="card-body">
-          <form>
+          <form [formGroup]="doctorForm" (ngSubmit)="createDoctor()">
             <h6 class="heading-small text-muted mb-4">Doctor information</h6>
             <div class="pl-lg-4">
               <div class="row">
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-username">First Name</label>
-                    <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="First Name">
+                    <input type="text" id="input-username"
+                    [ngClass]="{'is-invalid': doctorForm.get('firstName').errors 
+                    && doctorForm.get('firstName').touched}"
+                    formControlName="firstName" 
+                    class="form-control form-control-alternative" placeholder="First Name">
+                    <span class="invalid-feedback">First Name is required</span>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label class="form-control-label" for="input-username">Last Name</label>
-                    <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Last Name">
+                    <label class="form-control-label" for="input-lastName">Last Name</label>
+                    <input type="text" id="input-lastName"
+                    [ngClass]="{'is-invalid': doctorForm.get('lastName').errors 
+                    && doctorForm.get('lastName').touched}"
+                    formControlName="lastName" 
+                     class="form-control form-control-alternative" placeholder="Last Name">
+                     <span class="invalid-feedback">Last Name is required</span>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label class="form-control-label" for="input-username">Gender</label>
-                    <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Gender">
+                    <label class="form-control-label" for="input-gender">Gender</label>
+                    <input type="text" id="input-gender"
+                    [ngClass]="{'is-invalid': doctorForm.get('gender').errors 
+                    && doctorForm.get('gender').touched}"
+                    formControlName="gender" 
+                    class="form-control form-control-alternative" placeholder="Gender">
+                    <span class="invalid-feedback">Gender is required</span>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label class="form-control-label" for="input-username">Education</label>
-                    <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Education">
+                    <label class="form-control-label" for="input-education">Education</label>
+                    <input type="text" id="input-education"
+                    [ngClass]="{'is-invalid': doctorForm.get('education').errors 
+                    && doctorForm.get('education').touched}"
+                    formControlName="education" 
+                    class="form-control form-control-alternative" placeholder="Education">
+                    <span class="invalid-feedback">Education is required</span>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label class="form-control-label" for="input-username">Designation</label>
-                    <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Designation">
+                    <label class="form-control-label" for="input-designation">Designation</label>
+                    <input type="text" id="input-designation" 
+                    [ngClass]="{'is-invalid': doctorForm.get('designation').errors 
+                    && doctorForm.get('designation').touched}"
+                    formControlName="designation" 
+                    class="form-control form-control-alternative" placeholder="Designation">
+                    <span class="invalid-feedback">Designation is required</span>
                   </div>
                 </div>
               </div>
@@ -68,13 +93,23 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-email">Email</label>
-                    <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="Email">
+                    <input type="email" id="input-email" 
+                    [ngClass]="{'is-invalid': doctorForm.get('designation').errors 
+                    && doctorForm.get('designation').touched}"
+                    formControlName="designation" 
+                    class="form-control form-control-alternative" placeholder="Email">
+                    <span class="invalid-feedback">Email is required</span>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label class="form-control-label" for="input-city">Phone Number</label>
-                    <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="Phone number">
+                    <label class="form-control-label" for="input-phoneNumber">Phone Number</label>
+                    <input type="text" id="input-phoneNumber" 
+                    [ngClass]="{'is-invalid': doctorForm.get('phoneNumber').errors 
+                    && doctorForm.get('phoneNumber').touched}"
+                    formControlName="phoneNumber" 
+                    class="form-control form-control-alternative" placeholder="Phone number">
+                    <span class="invalid-feedback">Phone Number is required</span>
                   </div>
                 </div>
               </div>
@@ -86,12 +121,18 @@
               <div class="row">
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label class="form-control-label" for="input-email">Department</label>
-                    <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="Department">
+                    <label class="form-control-label" for="input-department">Department</label>
+                    <input type="email" id="input-department" 
+                    [ngClass]="{'is-invalid': doctorForm.get('department').errors 
+                    && doctorForm.get('department').touched}"
+                    formControlName="department" 
+                    class="form-control form-control-alternative" placeholder="Department">
+                    <span class="invalid-feedback">Department is required</span>
                   </div>
                 </div>
               </div>
             </div>
+            <button [disabled]="!doctorForm.valid" type="submit" class="btn btn-lg btn-primary pr-5 pl-5 mt-4">Submit</button>
           </form>
         </div>
       </div>
