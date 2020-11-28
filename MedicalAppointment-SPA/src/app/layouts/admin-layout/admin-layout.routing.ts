@@ -5,11 +5,12 @@ import { IconsComponent } from '../../pages/icons/icons.component';
 import { MapsComponent } from '../../pages/maps/maps.component';
 import { DoctorComponent } from '../../pages/doctor/doctor.component';
 import { TablesComponent } from '../../pages/tables/tables.component';
+import { DepartmentComponent } from 'src/app/pages/department/department.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'doctor',         component: DoctorComponent },
-    { path: 'tables',         component: TablesComponent },
+    { path: 'department',     component: DepartmentComponent },
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent }
 ];

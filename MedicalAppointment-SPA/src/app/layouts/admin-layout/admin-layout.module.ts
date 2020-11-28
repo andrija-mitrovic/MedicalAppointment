@@ -12,6 +12,7 @@ import { MapsComponent } from '../../pages/maps/maps.component';
 import { DoctorComponent } from '../../pages/doctor/doctor.component';
 import { TablesComponent } from '../../pages/tables/tables.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DepartmentComponent } from 'src/app/pages/department/department.component';
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -29,7 +30,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     DoctorComponent,
     TablesComponent,
     IconsComponent,
-    MapsComponent
+    MapsComponent,
+    DepartmentComponent
   ]
 })
 
