@@ -13,14 +13,20 @@ import { DepartmentService } from 'src/app/_services/department.service';
 export class DepartmentComponent implements OnInit {
   departmentForm: FormGroup;
   department: Department;
+  departments: Department[];
 
-  constructor(private doctorService: DepartmentService,
+  constructor(private departmentService: DepartmentService,
               private fb: FormBuilder,
               private router: Router,
               private alertify: AlertifyService) { }
 
   ngOnInit() {
     this.createDepartmentForm();
+    this.departmentService.getDepartments().subscribe((departments: Department[]) => {
+      this.departments=departments;
+    }, error => {
+      this.alertify.error;
+    });
   }
 
   createDepartmentForm() {
@@ -33,11 +39,23 @@ export class DepartmentComponent implements OnInit {
     if(this.departmentForm.valid) {
       console.log('asas');
       this.department = Object.assign({}, this.departmentForm.value);
-      this.doctorService.createDepartment(this.department).subscribe(() => {
-        this.router.navigate(['/department']);
+      this.departmentService.createDepartment(this.department).subscribe(() => {
+        this.departmentService.getDepartments().subscribe((departments: Department[]) => {
+          this.departments=departments;
+        }, error => {
+          this.alertify.error(error);
+        });
       }, error => {
         this.alertify.error(error);
       });
     }
+  }
+
+  deleteDepartment(id: number){
+    this.departmentService.deleteDepartment(id).subscribe(() => {
+      this.departments.splice(this.departments.findIndex(p=>p.departmentId==id), 1);
+    }, error => {
+      this.alertify.error(error);
+    });
   }
 }

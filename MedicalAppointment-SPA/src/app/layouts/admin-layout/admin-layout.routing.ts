@@ -11,6 +11,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'doctor',         component: DoctorComponent },
     { path: 'department',     component: DepartmentComponent },
+    { path: 'tables',          component: TablesComponent },
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent }
 ];
