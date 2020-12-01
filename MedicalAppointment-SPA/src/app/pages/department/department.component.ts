@@ -37,7 +37,6 @@ export class DepartmentComponent implements OnInit {
 
   createDepartment(){
     if(this.departmentForm.valid) {
-      console.log('asas');
       this.department = Object.assign({}, this.departmentForm.value);
       this.departmentService.createDepartment(this.department).subscribe(() => {
         this.departmentService.getDepartments().subscribe((departments: Department[]) => {

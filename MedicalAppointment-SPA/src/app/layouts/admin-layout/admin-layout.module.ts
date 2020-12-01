@@ -13,6 +13,7 @@ import { DoctorComponent } from '../../pages/doctor/doctor.component';
 import { TablesComponent } from '../../pages/tables/tables.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DepartmentComponent } from 'src/app/pages/department/department.component';
+import { BloodGroupComponent } from 'src/app/pages/bloodGroup/bloodGroup.component';
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -31,7 +32,8 @@ import { DepartmentComponent } from 'src/app/pages/department/department.compone
     TablesComponent,
     IconsComponent,
     MapsComponent,
-    DepartmentComponent
+    DepartmentComponent,
+    BloodGroupComponent
   ]
 })
 

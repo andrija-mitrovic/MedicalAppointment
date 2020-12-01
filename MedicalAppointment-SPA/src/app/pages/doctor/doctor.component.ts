@@ -38,7 +38,6 @@ export class DoctorComponent implements OnInit {
 
   createDoctor() {
     if(this.doctorForm.valid) {
-      console.log('asas');
       this.doctor = Object.assign({}, this.doctorForm.value);
       this.doctorService.createDoctor(this.doctor).subscribe(() => {
         this.router.navigate(['/doctor']);
