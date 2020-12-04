@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col-lg-7 col-md-10">
         <h1 class="display-2 text-white">Doctor</h1>
-        <p class="text-white mt-0 mb-5">This page is used to enter information about each doctor</p>
+        <p class="text-white mt-0 mb-5">This page is used to enter information about each doctor in the hospital</p>
         <!--<a href="#!" class="btn btn-info">Edit profile</a>-->
       </div>
     </div>
@@ -53,12 +53,22 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-gender">Gender</label>
-                    <input type="text" id="input-gender"
+                    <select 
+                      type="text" id="input-gender"
+                      [ngClass]="{'is-invalid': doctorForm.get('gender').errors 
+                      && doctorForm.get('gender').touched}"
+                      formControlName="gender"
+                      class="form-control"  
+                    >
+                    <option *ngFor="let gender of genders" [value]="gender">{{gender}}</option>
+                    </select>
+                    <span class="invalid-feedback">Gender is required</span>
+                    <!--<input type="text" id="input-gender"
                     [ngClass]="{'is-invalid': doctorForm.get('gender').errors 
                     && doctorForm.get('gender').touched}"
                     formControlName="gender" 
                     class="form-control form-control-alternative" placeholder="Gender">
-                    <span class="invalid-feedback">Gender is required</span>
+                    <span class="invalid-feedback">Gender is required</span>-->
                   </div>
                 </div>
                 <div class="col-lg-6">
@@ -94,9 +104,9 @@
                   <div class="form-group">
                     <label class="form-control-label" for="input-email">Email</label>
                     <input type="email" id="input-email" 
-                    [ngClass]="{'is-invalid': doctorForm.get('designation').errors 
-                    && doctorForm.get('designation').touched}"
-                    formControlName="designation" 
+                    [ngClass]="{'is-invalid': doctorForm.get('email').errors 
+                    && doctorForm.get('email').touched}"
+                    formControlName="email" 
                     class="form-control form-control-alternative" placeholder="Email">
                     <span class="invalid-feedback">Email is required</span>
                   </div>
@@ -122,12 +132,15 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-department">Department</label>
-                    <input type="email" id="input-department" 
-                    [ngClass]="{'is-invalid': doctorForm.get('department').errors 
-                    && doctorForm.get('department').touched}"
-                    formControlName="department" 
-                    class="form-control form-control-alternative" placeholder="Department">
-                    <span class="invalid-feedback">Department is required</span>
+                    <select 
+                      type="text" id="input-departmentId"
+                      [ngClass]="{'is-invalid': doctorForm.get('departmentId').errors 
+                      && doctorForm.get('departmentId').touched}"
+                      class="form-control" 
+                      formControlName="departmentId">
+                      <option *ngFor="let dep of departments" [value]="dep.departmentId">{{dep.name}}</option>
+                    </select>
+                    <span class="invalid-feedback">Phone Number is required</span>
                   </div>
                 </div>
               </div>
@@ -135,6 +148,67 @@
             <button [disabled]="!doctorForm.valid" type="submit" class="btn btn-lg btn-primary pr-5 pl-5 mt-4">Submit</button>
           </form>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid mt-5">
+  <!-- Table -->
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <h3 class="mb-0">Doctors</h3>
+        </div>
+        <div class="table-responsive">
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Education</th>
+                <th scope="col">Designation</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Department</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let doctor of doctors">        
+              <tr>
+                <th scope="row">
+                  {{doctor.firstName}}
+                </th>
+                <th scope="col">
+                  {{doctor.lastName}}
+                </th>
+                <th scope="col">
+                  {{doctor.gender}}
+                </th>
+                <th scope="col">
+                  {{doctor.education}}
+                </th>
+                <th scope="col">
+                  {{doctor.designation}}
+                </th>
+                <th scope="col">
+                  {{doctor.email}}
+                </th>
+                <th scope="col">
+                  {{doctor.phoneNumber}}
+                </th>
+                <th scope="col">
+                  {{doctor.departmentId}}
+                </th>
+                <td class="text-right">
+                  <button class="btn btn-sm" (click)="deleteDoctor(doctor.doctorId)">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
       </div>
     </div>
   </div>

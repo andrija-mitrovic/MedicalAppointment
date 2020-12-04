@@ -1,4 +1,4 @@
 export interface BloodGroup {
-    bloodGroupId: number,
-    name: string
+    bloodGroupId: number;
+    name: string;
 }
