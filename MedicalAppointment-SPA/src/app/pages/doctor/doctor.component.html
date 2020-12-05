@@ -178,19 +178,19 @@
             <tbody *ngFor="let doctor of doctors">        
               <tr>
                 <th scope="row">
-                  {{doctor.firstName}}
+                  {{doctor.firstName | titlecase}}
                 </th>
                 <th scope="col">
-                  {{doctor.lastName}}
+                  {{doctor.lastName | titlecase}}
                 </th>
                 <th scope="col">
-                  {{doctor.gender}}
+                  {{doctor.gender | titlecase}}
                 </th>
                 <th scope="col">
-                  {{doctor.education}}
+                  {{doctor.education | titlecase}}
                 </th>
                 <th scope="col">
-                  {{doctor.designation}}
+                  {{doctor.designation | titlecase}}
                 </th>
                 <th scope="col">
                   {{doctor.email}}
@@ -199,7 +199,7 @@
                   {{doctor.phoneNumber}}
                 </th>
                 <th scope="col">
-                  {{doctor.departmentId}}
+                  {{doctor.department.name | titlecase}}
                 </th>
                 <td class="text-right">
                   <button class="btn btn-sm" (click)="deleteDoctor(doctor.doctorId)">Delete</button>

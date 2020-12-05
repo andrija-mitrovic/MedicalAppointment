@@ -49,6 +49,7 @@ export function tokenGetter() {
     AuthLayoutComponent
   ],
   providers: [
+    AlertifyService,
     DoctorService,
     ErrorInterceptorProvider,
     PatientService,
@@ -56,7 +57,7 @@ export function tokenGetter() {
     AppointmentService,
     BloodGroupService,
     AuthService
-  ],
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,5 +9,6 @@ export interface Doctor {
     education: string;
     designation: string;
     gender: string;
-    departmentId: number;
+    departmentId?: number;
+    department?: Department;
 }

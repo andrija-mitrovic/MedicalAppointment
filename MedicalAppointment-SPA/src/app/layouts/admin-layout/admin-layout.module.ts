@@ -14,6 +14,8 @@ import { TablesComponent } from '../../pages/tables/tables.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DepartmentComponent } from 'src/app/pages/department/department.component';
 import { BloodGroupComponent } from 'src/app/pages/bloodGroup/bloodGroup.component';
+import { AlertifyService } from 'src/app/_services/alertify.service';
+import { ErrorInterceptorProvider } from 'src/app/_services/error.interceptor';
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -34,6 +36,10 @@ import { BloodGroupComponent } from 'src/app/pages/bloodGroup/bloodGroup.compone
     MapsComponent,
     DepartmentComponent,
     BloodGroupComponent
+  ],
+  providers:[
+    AlertifyService,
+    ErrorInterceptorProvider,
   ]
 })
 
