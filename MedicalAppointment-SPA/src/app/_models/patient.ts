@@ -1,3 +1,5 @@
+import { BloodGroup } from "./bloodGroup";
+
 export interface Patient {
     patientId: number;
     firstName: string;
@@ -6,5 +8,6 @@ export interface Patient {
     email: string;
     dateOfBirth: Date;
     gender: string;
-    bloodGroupId: number;
+    bloodGroupId?: number;
+    bloodGroup?: BloodGroup;
 }

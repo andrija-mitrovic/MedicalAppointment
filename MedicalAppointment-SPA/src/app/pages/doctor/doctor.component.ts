@@ -30,7 +30,6 @@ export class DoctorComponent implements OnInit {
     this.createDoctorForm();
     this.doctorService.getDoctors().subscribe((doctors: Doctor[]) => {
       this.doctors=doctors;
-      console.log(this.doctors);
     }, error => {
       this.alertify.error(error);
     });
@@ -70,7 +69,6 @@ export class DoctorComponent implements OnInit {
   }
 
   deleteDoctor(id: number){
-    console.log(id);
     this.doctorService.deleteDoctor(id).subscribe(() => {
       this.doctors.splice(this.doctors.findIndex(p=>p.doctorId==id), 1);
     }, error => {

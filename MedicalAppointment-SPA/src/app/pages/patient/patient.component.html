@@ -1,0 +1,201 @@
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url(assets/img/theme/heart.png); background-size: cover; background-position: center top;">
+  <!-- Mask -->
+  <span class="mask bg-gradient-danger opacity-8"></span>
+  <!-- Header container -->
+  <div class="container-fluid d-flex align-items-center">
+    <div class="row">
+      <div class="col-lg-7 col-md-10">
+        <h1 class="display-2 text-white">Patient</h1>
+        <p class="text-white mt-0 mb-5">This page is used to enter information about each patient in the hospital</p>
+        <!--<a href="#!" class="btn btn-info">Edit profile</a>-->
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid mt--9">
+  <div class="row">
+    <div class="offset-md-2 col-xl-8">
+      <div class="card bg-secondary shadow">
+        <div class="card-header bg-white border-0">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <h2 class="mb-0">Add New Patient</h2>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="patientForm" (ngSubmit)="createPatient()">
+            <h6 class="heading-small text-muted mb-4">Patient information</h6>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-firstName">First Name</label>
+                    <input type="text" id="input-firstName"
+                    [ngClass]="{'is-invalid': patientForm.get('firstName').errors 
+                    && patientForm.get('firstName').touched}"
+                    formControlName="firstName" 
+                    class="form-control form-control-alternative" placeholder="First Name">
+                    <span class="invalid-feedback">First Name is required</span>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-lastName">Last Name</label>
+                    <input type="text" id="input-lastName"
+                    [ngClass]="{'is-invalid': patientForm.get('lastName').errors 
+                    && patientForm.get('lastName').touched}"
+                    formControlName="lastName" 
+                     class="form-control form-control-alternative" placeholder="Last Name">
+                     <span class="invalid-feedback">Last Name is required</span>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <label class="form-control-label" for="input-dateOfBirth">Date of Birth</label>
+                  <!--<input [ngClass]="{'is-invalid': patientForm.get('dateOfBirth').errors 
+                        && patientForm.get('dateOfBirth').touched}" class="form-control"
+                        placeholder="Date of Birth" formControlName="dateOfBirth" type="text">
+                  <div class="invalid-feedback" *ngIf="patientForm.get('dateOfBirth').touched && patientForm.get('dateOfBirth').hasError('required')">Date of Birth is required</div>-->
+                  <div class="form-group">
+                    <input [ngClass]="{'is-invalid': patientForm.get('dateOfBirth').errors && patientForm.get('dateOfBirth').touched}" class="form-control"
+                      placeholder="Date of Birth" formControlName="dateOfBirth" type="date" >
+                    <div class="invalid-feedback" *ngIf="patientForm.get('dateOfBirth').touched && patientForm.get('dateOfBirth').hasError('required')">Date of Birth is required</div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-gender">Gender</label>
+                    <select 
+                      type="text" id="input-gender"
+                      [ngClass]="{'is-invalid': patientForm.get('gender').errors 
+                      && patientForm.get('gender').touched}"
+                      formControlName="gender"
+                      class="form-control"  
+                    >
+                    <option *ngFor="let gender of genders" [value]="gender">{{gender}}</option>
+                    </select>
+                    <span class="invalid-feedback">Gender is required</span>
+                    <!--<input type="text" id="input-gender"
+                    [ngClass]="{'is-invalid': doctorForm.get('gender').errors 
+                    && doctorForm.get('gender').touched}"
+                    formControlName="gender" 
+                    class="form-control form-control-alternative" placeholder="Gender">
+                    <span class="invalid-feedback">Gender is required</span>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr class="my-4" />
+            <!-- Address -->
+            <h6 class="heading-small text-muted mb-4">Contact information</h6>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Email</label>
+                    <input type="email" id="input-email" 
+                    [ngClass]="{'is-invalid': patientForm.get('email').errors 
+                    && patientForm.get('email').touched}"
+                    formControlName="email" 
+                    class="form-control form-control-alternative" placeholder="Email">
+                    <span class="invalid-feedback">Email is required</span>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-phoneNumber">Phone Number</label>
+                    <input type="text" id="input-phoneNumber" 
+                    [ngClass]="{'is-invalid': patientForm.get('phoneNumber').errors 
+                    && patientForm.get('phoneNumber').touched}"
+                    formControlName="phoneNumber" 
+                    class="form-control form-control-alternative" placeholder="Phone number">
+                    <span class="invalid-feedback">Phone Number is required</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr class="my-4" />
+            <!-- Address -->
+            <h6 class="heading-small text-muted mb-4">Technical information</h6>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-bloodGroupId">Blood Group</label>
+                    <select 
+                      type="text" id="input-bloodGroupId"
+                      [ngClass]="{'is-invalid': patientForm.get('bloodGroupId').errors 
+                      && patientForm.get('bloodGroupId').touched}"
+                      class="form-control" 
+                      formControlName="bloodGroupId">
+                      <option *ngFor="let bg of bloodGroups" [value]="bg.bloodGroupId">{{bg.name}}</option>
+                    </select>
+                    <span class="invalid-feedback">Blood Group is required</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button [disabled]="!patientForm.valid" type="submit" class="btn btn-lg btn-primary pr-5 pl-5 mt-4">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid mt-5">
+  <!-- Table -->
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <h3 class="mb-0">Patients</h3>
+        </div>
+        <div class="table-responsive">
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Date of Birth</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Blood Group</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let patient of patients">        
+              <tr>
+                <th scope="row">
+                  {{patient.firstName | titlecase}}
+                </th>
+                <th scope="col">
+                  {{patient.lastName | titlecase}}
+                </th>
+                <th scope="col">
+                  {{patient.dateOfBirth | titlecase}}
+                </th>
+                <th scope="col">
+                  {{patient.gender | titlecase}}
+                </th>
+                <th scope="col">
+                  {{patient.email}}
+                </th>
+                <th scope="col">
+                  {{patient.phoneNumber}}
+                </th>
+                <th scope="col">
+                  {{patient.bloodGroup?.name | titlecase}}
+                </th>
+                <td class="text-right">
+                  <button class="btn btn-sm" (click)="deletePatient(patient.patientId)">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
