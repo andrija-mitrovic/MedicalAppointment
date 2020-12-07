@@ -33,6 +33,8 @@ export class PatientComponent implements OnInit {
 
     this.bloodGroupService.getBloodGroups().subscribe((bloodGroups: BloodGroup[])=> {
       this.bloodGroups=bloodGroups;
+    }, error => {
+      this.alertify.error(error);
     });
   }
 

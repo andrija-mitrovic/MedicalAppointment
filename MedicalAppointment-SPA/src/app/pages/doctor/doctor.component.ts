@@ -36,6 +36,8 @@ export class DoctorComponent implements OnInit {
 
     this.departmentService.getDepartments().subscribe((departments: Department[])=> {
       this.departments=departments;
+    }, error => {
+      this.alertify.error(error);
     });
   }
 

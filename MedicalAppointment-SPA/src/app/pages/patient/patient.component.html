@@ -52,12 +52,8 @@
                 </div>
                 <div class="col-lg-6">
                   <label class="form-control-label" for="input-dateOfBirth">Date of Birth</label>
-                  <!--<input [ngClass]="{'is-invalid': patientForm.get('dateOfBirth').errors 
-                        && patientForm.get('dateOfBirth').touched}" class="form-control"
-                        placeholder="Date of Birth" formControlName="dateOfBirth" type="text">
-                  <div class="invalid-feedback" *ngIf="patientForm.get('dateOfBirth').touched && patientForm.get('dateOfBirth').hasError('required')">Date of Birth is required</div>-->
                   <div class="form-group">
-                    <input [ngClass]="{'is-invalid': patientForm.get('dateOfBirth').errors && patientForm.get('dateOfBirth').touched}" class="form-control"
+                    <input [ngClass]="{'is-invalid': patientForm.get('dateOfBirth').errors && patientForm.get('dateOfBirth').touched}" class="form-control form-control-alternative"
                       placeholder="Date of Birth" formControlName="dateOfBirth" type="date" >
                     <div class="invalid-feedback" *ngIf="patientForm.get('dateOfBirth').touched && patientForm.get('dateOfBirth').hasError('required')">Date of Birth is required</div>
                   </div>
@@ -70,17 +66,11 @@
                       [ngClass]="{'is-invalid': patientForm.get('gender').errors 
                       && patientForm.get('gender').touched}"
                       formControlName="gender"
-                      class="form-control"  
+                      class="form-control form-control-alternative"  
                     >
                     <option *ngFor="let gender of genders" [value]="gender">{{gender}}</option>
                     </select>
                     <span class="invalid-feedback">Gender is required</span>
-                    <!--<input type="text" id="input-gender"
-                    [ngClass]="{'is-invalid': doctorForm.get('gender').errors 
-                    && doctorForm.get('gender').touched}"
-                    formControlName="gender" 
-                    class="form-control form-control-alternative" placeholder="Gender">
-                    <span class="invalid-feedback">Gender is required</span>-->
                   </div>
                 </div>
               </div>
@@ -126,7 +116,7 @@
                       type="text" id="input-bloodGroupId"
                       [ngClass]="{'is-invalid': patientForm.get('bloodGroupId').errors 
                       && patientForm.get('bloodGroupId').touched}"
-                      class="form-control" 
+                      class="form-control form-control-alternative" 
                       formControlName="bloodGroupId">
                       <option *ngFor="let bg of bloodGroups" [value]="bg.bloodGroupId">{{bg.name}}</option>
                     </select>

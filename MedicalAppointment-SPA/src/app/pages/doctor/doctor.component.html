@@ -58,17 +58,11 @@
                       [ngClass]="{'is-invalid': doctorForm.get('gender').errors 
                       && doctorForm.get('gender').touched}"
                       formControlName="gender"
-                      class="form-control"  
+                      class="form-control form-control-alternative"  
                     >
                     <option *ngFor="let gender of genders" [value]="gender">{{gender}}</option>
                     </select>
                     <span class="invalid-feedback">Gender is required</span>
-                    <!--<input type="text" id="input-gender"
-                    [ngClass]="{'is-invalid': doctorForm.get('gender').errors 
-                    && doctorForm.get('gender').touched}"
-                    formControlName="gender" 
-                    class="form-control form-control-alternative" placeholder="Gender">
-                    <span class="invalid-feedback">Gender is required</span>-->
                   </div>
                 </div>
                 <div class="col-lg-6">
@@ -133,10 +127,10 @@
                   <div class="form-group">
                     <label class="form-control-label" for="input-department">Department</label>
                     <select 
-                      type="text" id="input-departmentId"
+                      type="text" id="input-department"
                       [ngClass]="{'is-invalid': doctorForm.get('departmentId').errors 
                       && doctorForm.get('departmentId').touched}"
-                      class="form-control" 
+                      class="form-control form-control-alternative" 
                       formControlName="departmentId">
                       <option *ngFor="let dep of departments" [value]="dep.departmentId">{{dep.name}}</option>
                     </select>

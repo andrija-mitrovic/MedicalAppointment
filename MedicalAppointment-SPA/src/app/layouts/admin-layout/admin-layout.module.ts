@@ -17,6 +17,7 @@ import { BloodGroupComponent } from 'src/app/pages/bloodGroup/bloodGroup.compone
 import { AlertifyService } from 'src/app/_services/alertify.service';
 import { ErrorInterceptorProvider } from 'src/app/_services/error.interceptor';
 import { PatientComponent } from 'src/app/pages/patient/patient.component';
+import { AppointmentComponent } from 'src/app/pages/appointment/appointment.component';
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -37,7 +38,8 @@ import { PatientComponent } from 'src/app/pages/patient/patient.component';
     MapsComponent,
     DepartmentComponent,
     BloodGroupComponent,
-    PatientComponent
+    PatientComponent,
+    AppointmentComponent
   ],
   providers:[
     AlertifyService,

@@ -1,0 +1,149 @@
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url(assets/img/theme/heart.png); background-size: cover; background-position: center top;">
+  <!-- Mask -->
+  <span class="mask bg-gradient-danger opacity-8"></span>
+  <!-- Header container -->
+  <div class="container-fluid d-flex align-items-center">
+    <div class="row">
+      <div class="col-lg-7 col-md-10">
+        <h1 class="display-2 text-white">Appointment</h1>
+        <p class="text-white mt-0 mb-5">This page is used to enter information about medical appointment</p>
+        <!--<a href="#!" class="btn btn-info">Edit profile</a>-->
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid mt--9">
+  <div class="row">
+    <div class="offset-md-2 col-xl-8">
+      <div class="card bg-secondary shadow">
+        <div class="card-header bg-white border-0">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <h2 class="mb-0">Add New Appointment</h2>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="appointmentForm" (ngSubmit)="createAppointment()">
+            <h6 class="heading-small text-muted mb-4">Appointment information</h6>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-lg-6">
+                  <label class="form-control-label" for="input-appointmentDate">Date of Birth</label>
+                  <div class="form-group">
+                    <input [ngClass]="{'is-invalid': appointmentForm.get('appointmentDate').errors && appointmentForm.get('appointmentDate').touched}" class="form-control form-control-alternative"
+                      placeholder="Date of Birth" formControlName="appointmentDate" type="date" >
+                    <div class="invalid-feedback" *ngIf="appointmentForm.get('appointmentDate').touched && appointmentForm.get('appointmentDate').hasError('required')">Date of Birth is required</div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-symptoms">Symptoms</label>
+                    <input type="text" id="input-symptoms"
+                    [ngClass]="{'is-invalid': appointmentForm.get('symptoms').errors 
+                    && appointmentForm.get('symptoms').touched}"
+                    formControlName="symptoms" 
+                    class="form-control form-control-alternative" placeholder="Symptoms">
+                     <span class="invalid-feedback">Symptoms are required</span>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-patient">Patient</label>
+                    <select 
+                      type="text" id="input-patient"
+                      [ngClass]="{'is-invalid': appointmentForm.get('patientId').errors 
+                      && appointmentForm.get('patientId').touched}"
+                      formControlName="patientId"
+                      class="form-control form-control-alternative"  
+                    >
+                    <option *ngFor="let patient of patients" [value]="patient.patientId">{{patient.firstName}} {{patient.lastName}}</option>                    </select>
+                    <span class="invalid-feedback">Patient is required</span>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-doctor">Doctor</label>
+                    <select 
+                      type="text" id="input-doctor"
+                      [ngClass]="{'is-invalid': appointmentForm.get('doctorId').errors 
+                      && appointmentForm.get('doctorId').touched}"
+                      formControlName="doctorId"
+                      class="form-control form-control-alternative"  
+                    >
+                    <option *ngFor="let doctor of doctors" [value]="doctor.doctorId">{{doctor.firstName}} {{doctor.lastName}}</option>                    </select>
+                    <span class="invalid-feedback">Doctor is required</span>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-department">Deparmtnet</label>
+                    <select 
+                      type="text" id="input-department"
+                      [ngClass]="{'is-invalid': appointmentForm.get('departmentId').errors 
+                      && appointmentForm.get('departmentId').touched}"
+                      formControlName="departmentId"
+                      class="form-control form-control-alternative"  
+                    >
+                    <option *ngFor="let department of departments" [value]="department.departmentId">{{department.name}}</option>                    </select>
+                    <span class="invalid-feedback">Deparmtnet is required</span>
+                  </div>
+                </div>
+            </div>
+            </div>
+            <button [disabled]="!appointmentForm.valid" type="submit" class="btn btn-lg btn-primary pr-5 pl-5 mt-4">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid mt-5">
+  <!-- Table -->
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <h3 class="mb-0">Appointments</h3>
+        </div>
+        <div class="table-responsive">
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Appointment Date</th>
+                <th scope="col">Symptoms</th>
+                <th scope="col">Patient</th>
+                <th scope="col">Doctor</th>
+                <th scope="col">Department</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let appointment of appointments">        
+              <tr>
+                <th scope="row">
+                  {{appointment.appointmentDate | titlecase}}
+                </th>
+                <th scope="col">
+                  {{appointment.symptoms | titlecase}}
+                </th>
+                <th scope="col">
+                  {{appointment.patient.firstName | titlecase}} {{appointment.patient.lastName | titlecase}}
+                </th>
+                <th scope="col">
+                  {{appointment.doctor.firstName | titlecase}} {{appointment.doctor.lastName | titlecase}}
+                </th>
+                <th scope="col">
+                  {{appointment.department.name | titlecase}}
+                </th>
+                <td class="text-right">
+                  <button class="btn btn-sm" (click)="deleteAppointment(appointment.appointmentId)">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

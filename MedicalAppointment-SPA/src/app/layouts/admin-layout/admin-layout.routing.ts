@@ -8,10 +8,12 @@ import { TablesComponent } from '../../pages/tables/tables.component';
 import { DepartmentComponent } from 'src/app/pages/department/department.component';
 import { BloodGroupComponent } from 'src/app/pages/bloodGroup/bloodGroup.component';
 import { PatientComponent } from 'src/app/pages/patient/patient.component';
+import { AppointmentComponent } from 'src/app/pages/appointment/appointment.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'doctor',         component: DoctorComponent },
+    { path: 'appointment',    component: AppointmentComponent },
     { path: 'department',     component: DepartmentComponent },
     { path: 'bloodGroup',     component: BloodGroupComponent },
     { path: 'patient',        component: PatientComponent },
