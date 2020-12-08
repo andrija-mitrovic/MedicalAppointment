@@ -9,15 +9,16 @@ import { DepartmentComponent } from 'src/app/pages/department/department.compone
 import { BloodGroupComponent } from 'src/app/pages/bloodGroup/bloodGroup.component';
 import { PatientComponent } from 'src/app/pages/patient/patient.component';
 import { AppointmentComponent } from 'src/app/pages/appointment/appointment.component';
+import { AuthGuard } from 'src/app/_guards/auth.guard';
 
 export const AdminLayoutRoutes: Routes = [
-    { path: 'dashboard',      component: DashboardComponent },
-    { path: 'doctor',         component: DoctorComponent },
-    { path: 'appointment',    component: AppointmentComponent },
-    { path: 'department',     component: DepartmentComponent },
-    { path: 'bloodGroup',     component: BloodGroupComponent },
-    { path: 'patient',        component: PatientComponent },
-    { path: 'tables',         component: TablesComponent },
-    { path: 'icons',          component: IconsComponent },
-    { path: 'maps',           component: MapsComponent }
+    { path: 'dashboard',      component: DashboardComponent, canActivate: [AuthGuard] },
+    { path: 'doctor',         component: DoctorComponent, canActivate: [AuthGuard] },
+    { path: 'appointment',    component: AppointmentComponent, canActivate: [AuthGuard] },
+    { path: 'department',     component: DepartmentComponent, canActivate: [AuthGuard] },
+    { path: 'bloodGroup',     component: BloodGroupComponent, canActivate: [AuthGuard] },
+    { path: 'patient',        component: PatientComponent, canActivate: [AuthGuard] },
+    { path: 'tables',         component: TablesComponent, canActivate: [AuthGuard] },
+    { path: 'icons',          component: IconsComponent, canActivate: [AuthGuard] },
+    { path: 'maps',           component: MapsComponent, canActivate: [AuthGuard] }
 ];
