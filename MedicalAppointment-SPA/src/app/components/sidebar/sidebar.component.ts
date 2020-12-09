@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertifyService } from 'src/app/_services/alertify.service';
+import { AuthService } from 'src/app/_services/auth.service';
 
 declare interface RouteInfo {
     path: string;
@@ -31,12 +33,21 @@ export class SidebarComponent implements OnInit {
   public menuItems: any[];
   public isCollapsed = true;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private authService: AuthService,
+              private alertify: AlertifyService) { }
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
     this.router.events.subscribe((event) => {
       this.isCollapsed = true;
    });
+  }
+
+  logout(){
+    localStorage.removeItem('token');
+    this.authService.decodedToken = null;
+    this.router.navigate(['/login']);
+    this.alertify.message('Logged out');
   }
 }
