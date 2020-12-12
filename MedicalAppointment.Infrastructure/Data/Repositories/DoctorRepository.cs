@@ -21,5 +21,10 @@ namespace MedicalAppointment.Infrastructure.Data.Repositories
         {
             return await _context.Doctors.Include(x => x.Department).FirstOrDefaultAsync(x => x.DoctorId == id);
         }
+
+        public async Task<int> GetTotalNumberOfDoctors()
+        {
+            return await _context.Doctors.CountAsync();
+        }
     }
 }

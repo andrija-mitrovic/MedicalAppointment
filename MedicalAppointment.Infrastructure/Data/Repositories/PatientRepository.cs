@@ -20,5 +20,20 @@ namespace MedicalAppointment.Infrastructure.Data.Repositories
         {
             return await _context.Patients.Include(x => x.BloodGroup).FirstOrDefaultAsync(x => x.PatientId == id);
         }
+
+        public async Task<int> GetTotalNumberOfMalePatient()
+        {
+            return await _context.Patients.CountAsync(x => x.Gender.ToUpper() == "MALE");  
+        }
+
+        public async Task<int> GetTotalNumberOfFemalePatient()
+        {
+            return await _context.Patients.CountAsync(x => x.Gender.ToUpper() == "FEMALE");
+        }
+
+        public async Task<int> GetTotalNumberOfPatients()
+        {
+            return await _context.Patients.CountAsync();
+        }
     }
 }

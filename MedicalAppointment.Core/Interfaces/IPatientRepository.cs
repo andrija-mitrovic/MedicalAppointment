@@ -10,5 +10,8 @@ namespace MedicalAppointment.Core.Interfaces
     {
         Task<IEnumerable<Patient>> GetPatientWithBloodGroup();
         Task<Patient> GetPatientWithBloodGroupById(int id);
+        Task<int> GetTotalNumberOfMalePatient();
+        Task<int> GetTotalNumberOfFemalePatient();
+        Task<int> GetTotalNumberOfPatients();
     }
 }

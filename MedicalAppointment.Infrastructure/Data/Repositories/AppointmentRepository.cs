@@ -28,5 +28,10 @@ namespace MedicalAppointment.Infrastructure.Data.Repositories
                 .Include(x => x.Department)
                 .FirstOrDefaultAsync(x => x.AppointmentId == id);
         }
+
+        public async Task<int> GetTotalNumberOfAppointments()
+        {
+            return await _context.Appointments.CountAsync();
+        }
     }
 }
