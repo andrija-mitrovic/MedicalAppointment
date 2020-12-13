@@ -1,8 +1,10 @@
-﻿using MedicalAppointment.Core.Interfaces;
+﻿using MedicalAppointment.Core.DTOs.Patient;
+using MedicalAppointment.Core.Interfaces;
 using MedicalAppointment.Core.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -34,6 +36,14 @@ namespace MedicalAppointment.Infrastructure.Data.Repositories
         public async Task<int> GetTotalNumberOfPatients()
         {
             return await _context.Patients.CountAsync();
+        }
+
+        public List<PatientsNumberByYears> GetPatientsNumberByAge()
+        {
+            return _context.PatientsNumberByYears
+                .FromSqlRaw(@"SELECT COUNT(*) AS Number,
+                              YEAR(CONVERT(DATE, DateOfBirth)) AS Year FROM Patients
+                              GROUP BY YEAR(CONVERT(DATE, DateOfBirth))").ToList();
         }
     }
 }

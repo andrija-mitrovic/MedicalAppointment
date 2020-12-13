@@ -13,5 +13,6 @@ namespace MedicalAppointment.Core.Interfaces
         Task<int> GetTotalNumberOfMalePatient();
         Task<int> GetTotalNumberOfFemalePatient();
         Task<int> GetTotalNumberOfPatients();
+        List<PatientsNumberByYears> GetPatientsNumberByAge();
     }
 }

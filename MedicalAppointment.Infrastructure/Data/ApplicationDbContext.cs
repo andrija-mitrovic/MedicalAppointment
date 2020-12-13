@@ -15,6 +15,7 @@ namespace MedicalAppointment.Infrastructure.Data
 
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Patient> Patients { get; set; }
+        public DbQuery<PatientsNumberByYears> PatientsNumberByYears { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<BloodGroup> BloodGroups { get; set; }
         public DbSet<Appointment> Appointments { get; set; }

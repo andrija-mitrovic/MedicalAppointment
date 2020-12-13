@@ -1,5 +1,6 @@
 ﻿using MedicalAppointment.Core.DTOs.Patient;
 using MedicalAppointment.Core.Interfaces;
+using MedicalAppointment.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,6 +20,11 @@ namespace MedicalAppointment.Core.Services
         public async Task<int> GetPatientsNumber()
         {
             return await _unitOfWork.Patients.GetTotalNumberOfPatients();
+        }
+
+        public List<PatientsNumberByYears> GetPatientsNumberByYear()
+        {
+            return _unitOfWork.Patients.GetPatientsNumberByAge();
         }
     }
 }

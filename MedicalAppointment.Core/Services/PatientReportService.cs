@@ -18,9 +18,22 @@ namespace MedicalAppointment.Core.Services
 
         public async Task<PatientReportDto> Create()
         {
+            var patients = _patientService.GetPatientsNumberByYear();
+
+            List<Point> chartPoints = new List<Point>();
+
+            foreach(var patient in patients)
+            {
+                chartPoints.Add(new Point()
+                {
+                    Number = patient.Number,
+                    Age = DateTime.Now.Year - patient.Year
+                });
+            }
             return new PatientReportDto()
             {
-                TotalNumber = await _patientService.GetPatientsNumber()
+                TotalNumber = await _patientService.GetPatientsNumber(),
+                ChartData = chartPoints
             };
         }
     }
