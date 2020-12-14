@@ -30,6 +30,7 @@ namespace MedicalAppointment.Core.Services
                     Age = DateTime.Now.Year - patient.Year
                 });
             }
+
             return new PatientReportDto()
             {
                 TotalNumber = await _patientService.GetPatientsNumber(),

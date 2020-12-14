@@ -26,5 +26,15 @@ namespace MedicalAppointment.Infrastructure.Data.Repositories
         {
             return await _context.Doctors.CountAsync();
         }
+
+        public async Task<int> GetTotalNumberOfFemaleDoctor()
+        {
+            return await _context.Doctors.CountAsync(x => x.Gender.ToUpper() == "MALE");
+        }
+
+        public async Task<int> GetTotalNumberOfMaleDoctor()
+        {
+            return await _context.Doctors.CountAsync(x => x.Gender.ToUpper() == "MALE");
+        }
     }
 }

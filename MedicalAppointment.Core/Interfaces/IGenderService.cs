@@ -9,7 +9,11 @@ namespace MedicalAppointment.Core.Interfaces
     {
         Task<int> GetMalePatientNumber();
         Task<int> GetFemalePatientNumber();
-        Task<decimal> GetPercentOfMaleGender();
-        Task<decimal> GetPercentOfFemaleGender();
+        Task<decimal> GetPercentOfMalePatientGender();
+        Task<decimal> GetPercentOfFemalePatientGender();
+        Task<int> GetMaleDoctorsNumber();
+        Task<int> GetFemaleDoctorsNumber();
+        Task<decimal> GetPercentOfMaleDoctorGender();
+        Task<decimal> GetPercentOfFemaleDoctorGender();
     }
 }

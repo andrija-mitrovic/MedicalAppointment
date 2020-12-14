@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
+import { Dashboard } from 'src/app/_models/dashboard';
+import { DashboardService } from 'src/app/_services/dashboard.service';
 
 // core components
 import {
@@ -15,29 +17,77 @@ import {
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
-  public datasets: any;
+  public datasetsNumber = new Array();
+  public datasetAge = new Array();
   public data: any;
   public salesChart;
   public clicked: boolean = true;
   public clicked1: boolean = false;
 
-  constructor() { }
+  dashboard: Dashboard;
+
+  constructor(private dashboardService: DashboardService) { }
 
   ngOnInit() {
-
-    this.datasets = [
-      [0, 20, 10, 30, 15, 40, 20, 60, 60],
-      [0, 20, 5, 25, 10, 30, 15, 40, 40]
-    ];
-    this.data = this.datasets[0];
-
+    this.dashboardService.getDashboardData().subscribe((dashboard:Dashboard)=>{
+      this.dashboard=dashboard;
+      for(let i=0;i<this.dashboard.patientReport.chartData.length;i++){
+        this.datasetsNumber.push(this.dashboard.patientReport.chartData[i].number);
+        this.datasetAge.push(this.dashboard.patientReport.chartData[i].age);
+      }
+    }, error => {
+      console.log(error);
+    });
 
     var chartOrders = document.getElementById('chart-orders');
 
     parseOptions(Chart, chartOptions());
 
+    var ordersChart = new Chart(chartOrders, {
+      type: 'bar',
+      options: {
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                callback: function(value) {
+                  if (!(value % 10)) {
+                    //return '$' + value + 'k'
+                    return value;
+                  }
+                }
+              }
+            }
+          ]
+        },
+        tooltips: {
+          callbacks: {
+            label: function(item, data) {
+              var label = data.datasets[item.datasetIndex].label || "";
+              var yLabel = item.yLabel;
+              var content = "";
+              if (data.datasets.length > 1) {
+                content += label;
+              }
+              content += yLabel;
+              return content;
+            }
+          }
+        }
+      },
+      data: {
+        labels: this.datasetAge,
+        datasets: [
+          {
+            label: "Number",
+            data: [this.datasetsNumber]
+          }
+        ]
+      }
+    });
 
+
+/*
     var ordersChart = new Chart(chartOrders, {
       type: 'bar',
       options: chartExample2.options,
@@ -54,12 +104,10 @@ export class DashboardComponent implements OnInit {
   }
 
 
-
-
-
   public updateOptions() {
     this.salesChart.data.datasets[0].data = this.data;
     this.salesChart.update();
-  }
+  }*/
+}
 
 }

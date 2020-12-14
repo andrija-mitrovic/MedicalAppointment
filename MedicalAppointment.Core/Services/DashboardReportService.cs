@@ -11,7 +11,8 @@ namespace MedicalAppointment.Core.Services
 {
     public class DashboardReportService
     {
-        private readonly GenderReportService _genderReportService;
+        private readonly GenderPatientReportService _genderPatientReportService;
+        private readonly GenderDoctorReportService _genderDoctorReportService;
         private readonly PatientReportService _patientReportService;
         private readonly DoctorReportService _doctorReportService;
         private readonly BloodGroupReportService _bloodGroupReportService;
@@ -35,7 +36,8 @@ namespace MedicalAppointment.Core.Services
             _doctorService = doctorService;
             _bloodGroupService = bloodGroupService;
             _appointmentService = appointmentService;
-            _genderReportService = new GenderReportService(_genderService);
+            _genderPatientReportService = new GenderPatientReportService(_genderService);
+            _genderDoctorReportService = new GenderDoctorReportService(_genderService);
             _patientReportService = new PatientReportService(_patientService);
             _doctorReportService = new DoctorReportService(_doctorService);
             _bloodGroupReportService = new BloodGroupReportService(_bloodGroupService);
@@ -51,7 +53,8 @@ namespace MedicalAppointment.Core.Services
                 BloodGroupReport = await _bloodGroupReportService.Create(),
                 DoctorReport = await _doctorReportService.Create(),
                 PatientReport = await _patientReportService.Create(),
-                GenderReport = await _genderReportService.Create()
+                GenderPatientReport = await _genderPatientReportService.Create(),
+                GenderDoctorReport = await _genderDoctorReportService.Create()
             };
 
             return dashboardData;

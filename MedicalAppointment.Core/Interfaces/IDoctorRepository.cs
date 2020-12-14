@@ -11,5 +11,7 @@ namespace MedicalAppointment.Core.Interfaces
         Task<IEnumerable<Doctor>> GetDoctorsWithDepartment();
         Task<Doctor> GetDoctorWithDepartmentById(int id);
         Task<int> GetTotalNumberOfDoctors();
+        Task<int> GetTotalNumberOfMaleDoctor();
+        Task<int> GetTotalNumberOfFemaleDoctor();
     }
 }

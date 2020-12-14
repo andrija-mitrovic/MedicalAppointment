@@ -15,6 +15,7 @@ namespace MedicalAppointment.Core.DTOs.Dashboard
         public AppointmentReportDto AppointmentReport { get; set; }
         public DoctorReportDto DoctorReport { get; set; }
         public PatientReportDto PatientReport { get; set; }
-        public GenderReportDto GenderReport { get; set; }
+        public GenderReportDto GenderPatientReport { get; set; }
+        public GenderReportDto GenderDoctorReport { get; set; }
     }
 }

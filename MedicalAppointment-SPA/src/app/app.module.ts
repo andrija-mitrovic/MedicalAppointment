@@ -20,6 +20,7 @@ import { BloodGroupService } from './_services/bloodGroup.service';
 import { AuthService } from './_services/auth.service';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { AlertifyService } from './_services/alertify.service';
+import { DashboardService } from './_services/dashboard.service';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -56,7 +57,8 @@ export function tokenGetter() {
     DepartmentService,
     AppointmentService,
     BloodGroupService,
-    AuthService
+    AuthService,
+    DashboardService
     ],
   bootstrap: [AppComponent]
 })
