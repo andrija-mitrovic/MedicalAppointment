@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import Chart from 'chart.js';
 import { Dashboard } from 'src/app/_models/dashboard';
 import { DashboardService } from 'src/app/_services/dashboard.service';
@@ -7,8 +7,6 @@ import { DashboardService } from 'src/app/_services/dashboard.service';
 import {
   chartOptions,
   parseOptions,
-  chartExample1,
-  chartExample2
 } from "../../variables/charts";
 
 @Component({
@@ -17,13 +15,8 @@ import {
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  public datasetsNumber = new Array();
-  public datasetAge = new Array();
-  public data: any;
-  public salesChart;
-  public clicked: boolean = true;
-  public clicked1: boolean = false;
-
+  datasetsNumber = new Array();
+  datasetAge = new Array();
   dashboard: Dashboard;
 
   constructor(private dashboardService: DashboardService) { }
@@ -85,29 +78,6 @@ export class DashboardComponent implements OnInit {
         ]
       }
     });
-
-
-/*
-    var ordersChart = new Chart(chartOrders, {
-      type: 'bar',
-      options: chartExample2.options,
-      data: chartExample2.data
-    });
-
-    var chartSales = document.getElementById('chart-sales');
-
-    this.salesChart = new Chart(chartSales, {
-			type: 'line',
-			options: chartExample1.options,
-			data: chartExample1.data
-		});
   }
-
-
-  public updateOptions() {
-    this.salesChart.data.datasets[0].data = this.data;
-    this.salesChart.update();
-  }*/
-}
 
 }
