@@ -12,6 +12,7 @@ namespace MedicalAppointment.Core.Interfaces
         IDepartmentRepository Departments { get; }
         IDoctorRepository Doctors { get; }
         IPatientRepository Patients { get; }
+        IUserRepository Users { get; }
         Task<bool> SaveAsync();
     }
 }

@@ -15,6 +15,7 @@ namespace MedicalAppointment.Infrastructure.Data.UnitOfWork
         private IDepartmentRepository _department;
         private IAppointmentRepository _appointment;
         private IPatientRepository _patient;
+        private IUserRepository _user;
 
         public UnitOfWork(ApplicationDbContext context)
         {
@@ -35,6 +36,9 @@ namespace MedicalAppointment.Infrastructure.Data.UnitOfWork
 
         public IPatientRepository Patients
             => _patient = _patient ?? new PatientRepository(_context);
+
+        public IUserRepository Users
+            => _user = _user ?? new UserRepository(_context);
 
         public async Task<bool> SaveAsync()
             => await _context.SaveChangesAsync() > 0;

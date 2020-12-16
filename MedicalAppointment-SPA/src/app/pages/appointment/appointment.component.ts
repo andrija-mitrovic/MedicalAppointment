@@ -23,6 +23,7 @@ export class AppointmentComponent implements OnInit {
   doctors: Doctor[];
   patients: Patient[];
   departments: Department[];
+  doctor: Doctor;
 
   constructor(private appointmentService: AppointmentService,
               private doctorService: DoctorService,
@@ -51,11 +52,11 @@ export class AppointmentComponent implements OnInit {
       this.alertify.error(error);
     });
 
-    this.departmentService.getDepartments().subscribe((departments: Department[])=>{
+    /*this.departmentService.getDepartments().subscribe((departments: Department[])=>{
       this.departments=departments;
     }, error => {
       this.alertify.error(error);
-    });
+    });*/
   }
 
   createAppointmentForm() {
@@ -64,23 +65,29 @@ export class AppointmentComponent implements OnInit {
       symptoms: ['', Validators.required],
       patientId: ['', Validators.required],
       doctorId: ['', Validators.required],
-      departmentId: ['', Validators.required]
+      departmentId: ['']
     });
   }
 
   createAppointment() {
     if(this.appointmentForm.value){
       this.appointment=Object.assign({}, this.appointmentForm.value);
-      this.appointmentService.createAppointment(this.appointment).subscribe(()=>{
-        this.appointmentService.getAppointments().subscribe((appointments: Appointment[])=>{
-          this.appointments=appointments;
-          this.appointmentForm.reset();
+      
+      this.doctorService.getDoctor(this.appointment.doctorId).subscribe((doctor: Doctor)=>{
+        this.appointment.departmentId=doctor.department.departmentId;
+        this.appointmentService.createAppointment(this.appointment).subscribe(()=>{
+          this.appointmentService.getAppointments().subscribe((appointments: Appointment[])=>{
+            this.appointments=appointments;
+            this.appointmentForm.reset();
+          },error=>{
+            this.alertify.error(error);
+          });
         },error=>{
-          this.alertify.error(error);
+            this.alertify.error(error); 
         });
-      },error=>{
-          this.alertify.error(error); 
       });
+
+      
     }
   }
 

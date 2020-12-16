@@ -29,7 +29,7 @@
             <div class="pl-lg-4">
               <div class="row">
                 <div class="col-lg-6">
-                  <label class="form-control-label" for="input-appointmentDate">Date of Birth</label>
+                  <label class="form-control-label" for="input-appointmentDate">Appointment Date</label>
                   <div class="form-group">
                     <input [ngClass]="{'is-invalid': appointmentForm.get('appointmentDate').errors && appointmentForm.get('appointmentDate').touched}" class="form-control form-control-alternative"
                       placeholder="Date of Birth" formControlName="appointmentDate" type="date" >
@@ -75,7 +75,7 @@
                     <span class="invalid-feedback">Doctor is required</span>
                   </div>
                 </div>
-                <div class="col-lg-6">
+               <!--<div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-department">Deparmtnet</label>
                     <select 
@@ -88,7 +88,7 @@
                     <option *ngFor="let department of departments" [value]="department.departmentId">{{department.name}}</option>                    </select>
                     <span class="invalid-feedback">Deparmtnet is required</span>
                   </div>
-                </div>
+                </div>-->
             </div>
             </div>
             <button [disabled]="!appointmentForm.valid" type="submit" class="btn btn-lg btn-primary pr-5 pl-5 mt-4">Submit</button>
