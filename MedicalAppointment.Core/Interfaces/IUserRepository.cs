@@ -7,5 +7,6 @@ namespace MedicalAppointment.Core.Interfaces
 {
     public interface IUserRepository:IGenericRepository<User>
     {
+        User FindUser(int id);
     }
 }

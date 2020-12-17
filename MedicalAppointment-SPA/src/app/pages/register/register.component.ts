@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/_models/user';
 import { AlertifyService } from 'src/app/_services/alertify.service';
 import { AuthService } from 'src/app/_services/auth.service';
@@ -17,7 +18,7 @@ export class RegisterComponent implements OnInit {
   constructor(private auth: AuthService,
               private fb: FormBuilder,
               private router: Router,
-              private alertify: AlertifyService) { }
+              private toaster: ToastrService) { }
 
   ngOnInit() {
     this.createRegisterForm();
@@ -38,7 +39,7 @@ export class RegisterComponent implements OnInit {
       this.auth.register(this.user).subscribe(() => {
         this.router.navigate(['/dashboard']);
       }, error => {
-        this.alertify.error(error);
+        this.toaster.error(error);
       });
     }
   }

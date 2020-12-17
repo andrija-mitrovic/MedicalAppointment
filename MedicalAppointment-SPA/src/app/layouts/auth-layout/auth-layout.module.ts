@@ -8,12 +8,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from '../../pages/login/login.component';
 import { RegisterComponent } from '../../pages/register/register.component';
 import { AlertifyService } from 'src/app/_services/alertify.service';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(AuthLayoutRoutes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right'
+    })
     // NgbModule
   ],
   declarations: [

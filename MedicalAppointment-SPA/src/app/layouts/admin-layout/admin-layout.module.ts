@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';import { RouterModule } from '@angular/router';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -15,9 +15,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DepartmentComponent } from 'src/app/pages/department/department.component';
 import { BloodGroupComponent } from 'src/app/pages/bloodGroup/bloodGroup.component';
 import { AlertifyService } from 'src/app/_services/alertify.service';
-import { ErrorInterceptorProvider } from 'src/app/_services/error.interceptor';
 import { PatientComponent } from 'src/app/pages/patient/patient.component';
 import { AppointmentComponent } from 'src/app/pages/appointment/appointment.component';
+import { TestErrorsComponent } from 'src/app/errors/test-errors/test-errors.component';
+import { ToastrModule } from 'ngx-toastr';
+import { ErrorInterceptorProvider } from 'src/app/_interceptors/error.interceptor';
+import { NotFoundComponent } from 'src/app/errors/not-found/not-found.component';
+import { ServerErrorComponent } from 'src/app/errors/server-error/server-error.component';
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -28,7 +32,10 @@ import { AppointmentComponent } from 'src/app/pages/appointment/appointment.comp
     HttpClientModule,
     NgbModule,
     ReactiveFormsModule,
-    ClipboardModule
+    ClipboardModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right'
+    })
   ],
   declarations: [
     DashboardComponent,
@@ -39,11 +46,14 @@ import { AppointmentComponent } from 'src/app/pages/appointment/appointment.comp
     DepartmentComponent,
     BloodGroupComponent,
     PatientComponent,
-    AppointmentComponent
+    AppointmentComponent,
+    TestErrorsComponent,
+    NotFoundComponent,
+    ServerErrorComponent
   ],
   providers:[
     AlertifyService,
-    ErrorInterceptorProvider,
+    ErrorInterceptorProvider
   ]
 })
 

@@ -9,5 +9,10 @@ namespace MedicalAppointment.Infrastructure.Data.Repositories
     public class UserRepository: GenericRepository<User>,IUserRepository
     {
         public UserRepository(ApplicationDbContext context) : base(context) { }
+
+        public User FindUser(int id)
+        {
+            return _context.Users.Find(id);
+        }
     }
 }

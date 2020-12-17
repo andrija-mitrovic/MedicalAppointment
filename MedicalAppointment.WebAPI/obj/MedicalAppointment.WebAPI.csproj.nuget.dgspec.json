@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\ASP NET Core Angular\\MedicalAppointment\\MedicalAppointment.WebAPI\\MedicalAppointment.WebAPI.csproj": {}
+    "D:\\Projects\\ASP NET Core Angular\\MedicalAppointment\\medicalappointment.webapi\\MedicalAppointment.WebAPI.csproj": {}
   },
   "projects": {
     "D:\\Projects\\ASP NET Core Angular\\MedicalAppointment\\MedicalAppointment.Core\\MedicalAppointment.Core.csproj": {
@@ -162,14 +162,14 @@
         }
       }
     },
-    "D:\\Projects\\ASP NET Core Angular\\MedicalAppointment\\MedicalAppointment.WebAPI\\MedicalAppointment.WebAPI.csproj": {
+    "D:\\Projects\\ASP NET Core Angular\\MedicalAppointment\\medicalappointment.webapi\\MedicalAppointment.WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\ASP NET Core Angular\\MedicalAppointment\\MedicalAppointment.WebAPI\\MedicalAppointment.WebAPI.csproj",
+        "projectUniqueName": "D:\\Projects\\ASP NET Core Angular\\MedicalAppointment\\medicalappointment.webapi\\MedicalAppointment.WebAPI.csproj",
         "projectName": "MedicalAppointment.WebAPI",
-        "projectPath": "D:\\Projects\\ASP NET Core Angular\\MedicalAppointment\\MedicalAppointment.WebAPI\\MedicalAppointment.WebAPI.csproj",
+        "projectPath": "D:\\Projects\\ASP NET Core Angular\\MedicalAppointment\\medicalappointment.webapi\\MedicalAppointment.WebAPI.csproj",
         "packagesPath": "C:\\Users\\ANDRIJA\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\ASP NET Core Angular\\MedicalAppointment\\MedicalAppointment.WebAPI\\obj\\",
+        "outputPath": "D:\\Projects\\ASP NET Core Angular\\MedicalAppointment\\medicalappointment.webapi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

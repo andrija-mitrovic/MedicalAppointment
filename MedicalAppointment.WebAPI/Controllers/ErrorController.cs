@@ -31,17 +31,18 @@ namespace MedicalAppointment.WebAPI.Controllers
         [HttpGet("not-found")]
         public ActionResult<User> GetNotFound()
         {
-            var thing = _unitOfWork.Users.GetByIdAsync(-1);
+            var thing = _unitOfWork.Users.FindUser(-1);
 
             if (thing == null) return NotFound();
 
             return Ok(thing);
         }
 
+        [AllowAnonymous]
         [HttpGet("server-error")]
         public ActionResult<string> GetServerError()
         {
-            var thing = _unitOfWork.Users.GetByIdAsync(-1);
+            var thing = _unitOfWork.Users.FindUser(-1);
 
             var thingToReturn = thing.ToString();
 

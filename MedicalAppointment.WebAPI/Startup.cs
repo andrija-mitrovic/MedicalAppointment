@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MedicalAppointment.Core;
 using MedicalAppointment.Infrastructure;
 using MedicalAppointment.WebAPI.Extensions;
+using MedicalAppointment.WebAPI.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
@@ -40,7 +41,7 @@ namespace MedicalAppointment.WebAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            /*if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
@@ -57,7 +58,9 @@ namespace MedicalAppointment.WebAPI
                         }
                     });
                 });
-            }
+            }*/
+
+            app.UseMiddleware<ExceptionMiddleware>();
 
             app.UseHttpsRedirection();
 

@@ -29,7 +29,7 @@
     "clipboard": "2.0.4",
     "core-js": "2.6.4",
     "ngx-clipboard": "11.1.9",
-    "ngx-toastr": "9.1.2",
+    "ngx-toastr": "^9.1.2",
     "nouislider": "13.1.1",
     "rxjs": "6.4.0",
     "v4": "0.0.1",
