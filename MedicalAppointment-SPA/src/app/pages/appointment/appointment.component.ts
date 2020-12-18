@@ -5,7 +5,6 @@ import { Appointment } from 'src/app/_models/appointment';
 import { Department } from 'src/app/_models/department';
 import { Doctor } from 'src/app/_models/doctor';
 import { Patient } from 'src/app/_models/patient';
-import { AlertifyService } from 'src/app/_services/alertify.service';
 import { AppointmentService } from 'src/app/_services/appointment.service';
 import { DepartmentService } from 'src/app/_services/department.service';
 import { DoctorService } from 'src/app/_services/doctor.service';
@@ -29,27 +28,20 @@ export class AppointmentComponent implements OnInit {
               private doctorService: DoctorService,
               private patientService: PatientService,
               private departmentService: DepartmentService,
-              private fb: FormBuilder,
-              private alertify: AlertifyService) { }
+              private fb: FormBuilder) { }
 
   ngOnInit() {
     this.createAppointmentForm();
     this.appointmentService.getAppointments().subscribe((appointmens: Appointment[])=> {
       this.appointments=appointmens;
-    }, error => {
-      this.alertify.error(error);
     });
 
     this.doctorService.getDoctors().subscribe((doctors: Doctor[])=>{
       this.doctors=doctors;
-    }, error => {
-      this.alertify.error(error);
     })
 
     this.patientService.getPatients().subscribe((patients: Patient[]) => {
       this.patients=patients;
-    }, error=> {
-      this.alertify.error(error);
     });
 
     /*this.departmentService.getDepartments().subscribe((departments: Department[])=>{
@@ -79,11 +71,7 @@ export class AppointmentComponent implements OnInit {
           this.appointmentService.getAppointments().subscribe((appointments: Appointment[])=>{
             this.appointments=appointments;
             this.appointmentForm.reset();
-          },error=>{
-            this.alertify.error(error);
           });
-        },error=>{
-            this.alertify.error(error); 
         });
       });
 
@@ -94,8 +82,6 @@ export class AppointmentComponent implements OnInit {
   deleteAppointment(id: number) {
     this.appointmentService.deleteAppointment(id).subscribe(() => {
       this.appointments.splice(this.appointments.findIndex(p=>p.appointmentId==id, 1));
-    }, error => {
-      this.alertify.error(error);
     });
   }
 }

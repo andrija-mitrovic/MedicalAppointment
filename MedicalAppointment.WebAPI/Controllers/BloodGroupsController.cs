@@ -31,7 +31,7 @@ namespace MedicalAppointment.WebAPI.Controllers
         {
             var bloodGroups = await _unitOfWork.BloodGroups.GetAllAsync();
             var bloodGroupsDto = _mapper.Map<IEnumerable<BloodGroupDetailDto>>(bloodGroups);
-
+        
             return Ok(bloodGroupsDto);
         }
 

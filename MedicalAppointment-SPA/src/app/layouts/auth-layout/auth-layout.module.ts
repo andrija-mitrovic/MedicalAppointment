@@ -6,9 +6,8 @@ import { AuthLayoutRoutes } from './auth-layout.routing';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { LoginComponent } from '../../pages/login/login.component';
-import { RegisterComponent } from '../../pages/register/register.component';
-import { AlertifyService } from 'src/app/_services/alertify.service';
 import { ToastrModule } from 'ngx-toastr';
+import { RegisterComponent } from 'src/app/pages/register/register.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -25,7 +24,6 @@ import { ToastrModule } from 'ngx-toastr';
     RegisterComponent
   ],
   providers:[
-    AlertifyService
   ]
 })
 export class AuthLayoutModule { }

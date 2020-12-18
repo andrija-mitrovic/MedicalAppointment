@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Department } from 'src/app/_models/department';
-import { AlertifyService } from 'src/app/_services/alertify.service';
 import { DepartmentService } from 'src/app/_services/department.service';
 
 @Component({
@@ -17,15 +16,12 @@ export class DepartmentComponent implements OnInit {
 
   constructor(private departmentService: DepartmentService,
               private fb: FormBuilder,
-              private router: Router,
-              private alertify: AlertifyService) { }
+              private router: Router) { }
 
   ngOnInit() {
     this.createDepartmentForm();
     this.departmentService.getDepartments().subscribe((departments: Department[]) => {
       this.departments=departments;
-    }, error => {
-      this.alertify.error;
     });
   }
 
@@ -41,11 +37,7 @@ export class DepartmentComponent implements OnInit {
       this.departmentService.createDepartment(this.department).subscribe(() => {
         this.departmentService.getDepartments().subscribe((departments: Department[]) => {
           this.departments=departments;
-        }, error => {
-          this.alertify.error(error);
         });
-      }, error => {
-        this.alertify.error(error);
       });
     }
   }
@@ -53,8 +45,6 @@ export class DepartmentComponent implements OnInit {
   deleteDepartment(id: number){
     this.departmentService.deleteDepartment(id).subscribe(() => {
       this.departments.splice(this.departments.findIndex(p=>p.departmentId==id), 1);
-    }, error => {
-      this.alertify.error(error);
     });
   }
 }

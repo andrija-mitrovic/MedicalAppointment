@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BloodGroup } from 'src/app/_models/bloodGroup';
-import { AlertifyService } from 'src/app/_services/alertify.service';
 import { BloodGroupService } from 'src/app/_services/bloodGroup.service';
 
 @Component({
@@ -17,15 +16,12 @@ export class BloodGroupComponent implements OnInit {
 
   constructor(private bloodGroupService: BloodGroupService,
               private fb: FormBuilder,
-              private router: Router,
-              private alertify: AlertifyService) { }
+              private router: Router) { }
 
   ngOnInit() {
     this.createBloodGroupForm();
     this.bloodGroupService.getBloodGroups().subscribe((bloodGroups: BloodGroup[]) => {
       this.bloodGroups=bloodGroups;
-    }, error => {
-      this.alertify.error;
     });
   }
 
@@ -41,11 +37,7 @@ export class BloodGroupComponent implements OnInit {
       this.bloodGroupService.createBloodGroup(this.bloodGroup).subscribe(() => {
         this.bloodGroupService.getBloodGroups().subscribe((bloodGroups: BloodGroup[]) => {
           this.bloodGroups=bloodGroups;
-        }, error => {
-          this.alertify.error(error);
         });
-      }, error => {
-        this.alertify.error(error);
       });
     }
   }
@@ -53,8 +45,6 @@ export class BloodGroupComponent implements OnInit {
   deleteBloodGroup(id: number){
     this.bloodGroupService.deleteBloodGroup(id).subscribe(() => {
       this.bloodGroups.splice(this.bloodGroups.findIndex(p=>p.bloodGroupId==id), 1);
-    }, error => {
-      this.alertify.error(error);
     });
   }
 }

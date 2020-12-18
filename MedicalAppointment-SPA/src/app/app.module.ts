@@ -18,7 +18,6 @@ import { DepartmentService } from './_services/department.service';
 import { AppointmentService } from './_services/appointment.service';
 import { BloodGroupService } from './_services/bloodGroup.service';
 import { AuthService } from './_services/auth.service';
-import { AlertifyService } from './_services/alertify.service';
 import { DashboardService } from './_services/dashboard.service';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { ToastrModule } from 'ngx-toastr';
@@ -58,7 +57,6 @@ export function tokenGetter() {
   ],
   providers: [
     ErrorInterceptorProvider,
-    AlertifyService,
     DoctorService,
     PatientService,
     DepartmentService,

@@ -14,7 +14,6 @@ import { TablesComponent } from '../../pages/tables/tables.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DepartmentComponent } from 'src/app/pages/department/department.component';
 import { BloodGroupComponent } from 'src/app/pages/bloodGroup/bloodGroup.component';
-import { AlertifyService } from 'src/app/_services/alertify.service';
 import { PatientComponent } from 'src/app/pages/patient/patient.component';
 import { AppointmentComponent } from 'src/app/pages/appointment/appointment.component';
 import { TestErrorsComponent } from 'src/app/errors/test-errors/test-errors.component';
@@ -52,7 +51,6 @@ import { ServerErrorComponent } from 'src/app/errors/server-error/server-error.c
     ServerErrorComponent
   ],
   providers:[
-    AlertifyService,
     ErrorInterceptorProvider
   ]
 })

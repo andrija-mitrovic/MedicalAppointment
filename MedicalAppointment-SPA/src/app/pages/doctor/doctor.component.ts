@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { error } from 'protractor';
 import { Department } from 'src/app/_models/department';
 import { Doctor } from 'src/app/_models/doctor';
-import { AlertifyService } from 'src/app/_services/alertify.service';
 import { DepartmentService } from 'src/app/_services/department.service';
 import { DoctorService } from 'src/app/_services/doctor.service';
 
@@ -23,21 +22,16 @@ export class DoctorComponent implements OnInit {
   constructor(private doctorService: DoctorService,
               private departmentService: DepartmentService,
               private fb: FormBuilder,
-              private router: Router,
-              private alertify: AlertifyService) { }
+              private router: Router) { }
 
   ngOnInit() {
     this.createDoctorForm();
     this.doctorService.getDoctors().subscribe((doctors: Doctor[]) => {
       this.doctors=doctors;
-    }, error => {
-      this.alertify.error(error);
     });
 
     this.departmentService.getDepartments().subscribe((departments: Department[])=> {
       this.departments=departments;
-    }, error => {
-      this.alertify.error(error);
     });
   }
 
@@ -61,11 +55,7 @@ export class DoctorComponent implements OnInit {
         this.doctorService.getDoctors().subscribe((doctors: Doctor[])=>{
           this.doctors=doctors;
           this.doctorForm.reset();
-        },error => {
-          this.alertify.error(error);
         });
-      }, error => {
-        this.alertify.error(error);
       });
     }
   }
@@ -73,8 +63,6 @@ export class DoctorComponent implements OnInit {
   deleteDoctor(id: number){
     this.doctorService.deleteDoctor(id).subscribe(() => {
       this.doctors.splice(this.doctors.findIndex(p=>p.doctorId==id), 1);
-    }, error => {
-      this.alertify.error(error);
     });
   }
 }

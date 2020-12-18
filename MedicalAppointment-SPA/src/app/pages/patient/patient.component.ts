@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BloodGroup } from 'src/app/_models/bloodGroup';
 import { Patient } from 'src/app/_models/patient';
-import { AlertifyService } from 'src/app/_services/alertify.service';
 import { BloodGroupService } from 'src/app/_services/bloodGroup.service';
 import { PatientService } from 'src/app/_services/patient.service';
 
@@ -20,21 +19,16 @@ export class PatientComponent implements OnInit {
 
   constructor(private patientService: PatientService,
               private bloodGroupService: BloodGroupService,
-              private fb: FormBuilder,
-              private alertify: AlertifyService) { }
+              private fb: FormBuilder) { }
 
   ngOnInit() {
     this.createPatientForm();
     this.patientService.getPatients().subscribe((patients: Patient[]) => {
       this.patients=patients;
-    }, error => {
-      this.alertify.error(error);
     });
 
     this.bloodGroupService.getBloodGroups().subscribe((bloodGroups: BloodGroup[])=> {
       this.bloodGroups=bloodGroups;
-    }, error => {
-      this.alertify.error(error);
     });
   }
 
@@ -57,11 +51,7 @@ export class PatientComponent implements OnInit {
         this.patientService.getPatients().subscribe((patients: Patient[])=>{
           this.patients=patients;
           this.patientForm.reset();
-        },error => {
-          this.alertify.error(error);
         });
-      }, error => {
-        this.alertify.error(error);
       });
     }
   }
@@ -69,8 +59,6 @@ export class PatientComponent implements OnInit {
   deletePatient(id: number) {
     this.patientService.deletePatient(id).subscribe(() => {
       this.patients.splice(this.patients.findIndex(p=>p.patientId==id), 1);
-    }, error => {
-      this.alertify.error(error);
     });
   }
   
