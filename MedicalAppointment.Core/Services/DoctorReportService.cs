@@ -17,11 +17,11 @@ namespace MedicalAppointment.Core.Services
             _doctorService = doctorService;
         }
 
-        public async Task<DoctorReportDto> Create()
+        public async Task<DoctorReportDto> CreateAsync()
         {
             return new DoctorReportDto()
             {
-                TotalNumber = await _doctorService.GetDoctorsNumber()
+                TotalNumber = await _doctorService.GetDoctorsNumberAsync()
             };
         }
     }

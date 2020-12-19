@@ -7,6 +7,6 @@ namespace MedicalAppointment.Core.Interfaces
 {
     public interface IAppointmentService
     {
-        Task<int> GetAppointmentsNumber();
+        Task<int> GetAppointmentsNumberAsync();
     }
 }

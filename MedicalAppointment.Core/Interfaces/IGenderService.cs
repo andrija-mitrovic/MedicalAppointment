@@ -7,13 +7,13 @@ namespace MedicalAppointment.Core.Interfaces
 {
     public interface IGenderService
     {
-        Task<int> GetMalePatientNumber();
-        Task<int> GetFemalePatientNumber();
-        Task<decimal> GetPercentOfMalePatientGender();
-        Task<decimal> GetPercentOfFemalePatientGender();
-        Task<int> GetMaleDoctorsNumber();
-        Task<int> GetFemaleDoctorsNumber();
-        Task<decimal> GetPercentOfMaleDoctorGender();
-        Task<decimal> GetPercentOfFemaleDoctorGender();
+        Task<int> GetMalePatientNumberAsync();
+        Task<int> GetFemalePatientNumberAsync();
+        Task<decimal> GetPercentOfMalePatientGenderAsync();
+        Task<decimal> GetPercentOfFemalePatientGenderAsync();
+        Task<int> GetMaleDoctorsNumberAsync();
+        Task<int> GetFemaleDoctorsNumberAsync();
+        Task<decimal> GetPercentOfMaleDoctorGenderAsync();
+        Task<decimal> GetPercentOfFemaleDoctorGenderAsync();
     }
 }

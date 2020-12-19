@@ -8,6 +8,6 @@ namespace MedicalAppointment.Core.Interfaces
 {
     public interface IBloodGroupRepository : IGenericRepository<BloodGroup>
     {
-        Task<int> GetTotalNumberOfBloodGroups();
+        Task<int> GetTotalNumberOfBloodGroupsAsync();
     }
 }

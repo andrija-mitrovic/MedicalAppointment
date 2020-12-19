@@ -15,9 +15,9 @@ namespace MedicalAppointment.Core.Services
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<int> GetBloodGroupsNumber()
+        public async Task<int> GetBloodGroupsNumberAsync()
         {
-            return await _unitOfWork.BloodGroups.GetTotalNumberOfBloodGroups();
+            return await _unitOfWork.BloodGroups.GetTotalNumberOfBloodGroupsAsync();
         }
     }
 }

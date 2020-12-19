@@ -19,7 +19,6 @@ import { AppointmentService } from './_services/appointment.service';
 import { BloodGroupService } from './_services/bloodGroup.service';
 import { AuthService } from './_services/auth.service';
 import { DashboardService } from './_services/dashboard.service';
-import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { ToastrModule } from 'ngx-toastr';
 import { ErrorInterceptorProvider } from './_interceptors/error.interceptor';
 import { NotFoundComponent } from './errors/not-found/not-found.component';

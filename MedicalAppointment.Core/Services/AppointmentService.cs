@@ -15,9 +15,9 @@ namespace MedicalAppointment.Core.Services
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<int> GetAppointmentsNumber()
+        public async Task<int> GetAppointmentsNumberAsync()
         {
-            return await _unitOfWork.Appointments.GetTotalNumberOfAppointments();
+            return await _unitOfWork.Appointments.GetTotalNumberOfAppointmentsAsync();
         }
     }
 }

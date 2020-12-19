@@ -7,6 +7,6 @@ namespace MedicalAppointment.Core.Interfaces
 {
     public interface IBloodGroupService
     {
-        Task<int> GetBloodGroupsNumber();
+        Task<int> GetBloodGroupsNumberAsync();
     }
 }

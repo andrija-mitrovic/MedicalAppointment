@@ -16,7 +16,6 @@ import { DepartmentComponent } from 'src/app/pages/department/department.compone
 import { BloodGroupComponent } from 'src/app/pages/bloodGroup/bloodGroup.component';
 import { PatientComponent } from 'src/app/pages/patient/patient.component';
 import { AppointmentComponent } from 'src/app/pages/appointment/appointment.component';
-import { TestErrorsComponent } from 'src/app/errors/test-errors/test-errors.component';
 import { ToastrModule } from 'ngx-toastr';
 import { ErrorInterceptorProvider } from 'src/app/_interceptors/error.interceptor';
 import { NotFoundComponent } from 'src/app/errors/not-found/not-found.component';
@@ -46,7 +45,6 @@ import { ServerErrorComponent } from 'src/app/errors/server-error/server-error.c
     BloodGroupComponent,
     PatientComponent,
     AppointmentComponent,
-    TestErrorsComponent,
     NotFoundComponent,
     ServerErrorComponent
   ],

@@ -10,7 +10,6 @@ import { BloodGroupComponent } from 'src/app/pages/bloodGroup/bloodGroup.compone
 import { PatientComponent } from 'src/app/pages/patient/patient.component';
 import { AppointmentComponent } from 'src/app/pages/appointment/appointment.component';
 import { AuthGuard } from 'src/app/_guards/auth.guard';
-import { TestErrorsComponent } from 'src/app/errors/test-errors/test-errors.component';
 import { NotFoundComponent } from 'src/app/errors/not-found/not-found.component';
 import { ServerErrorComponent } from 'src/app/errors/server-error/server-error.component';
 
@@ -24,7 +23,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'tables',         component: TablesComponent, canActivate: [AuthGuard] },
     { path: 'icons',          component: IconsComponent, canActivate: [AuthGuard] },
     { path: 'maps',           component: MapsComponent, canActivate: [AuthGuard] },
-    { path: 'errors',         component: TestErrorsComponent, canActivate: [AuthGuard]},
     { path: 'not-found',      component: NotFoundComponent, canActivate: [AuthGuard]},
     { path: 'server-error',   component: ServerErrorComponent, canActivate: [AuthGuard]}
 ];

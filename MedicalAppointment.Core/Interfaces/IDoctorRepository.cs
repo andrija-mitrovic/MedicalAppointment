@@ -8,10 +8,10 @@ namespace MedicalAppointment.Core.Interfaces
 {
     public interface IDoctorRepository:IGenericRepository<Doctor>
     {
-        Task<IEnumerable<Doctor>> GetDoctorsWithDepartment();
-        Task<Doctor> GetDoctorWithDepartmentById(int id);
-        Task<int> GetTotalNumberOfDoctors();
-        Task<int> GetTotalNumberOfMaleDoctor();
-        Task<int> GetTotalNumberOfFemaleDoctor();
+        Task<IEnumerable<Doctor>> GetDoctorsWithDepartmentAsync();
+        Task<Doctor> GetDoctorWithDepartmentByIdAsync(int id);
+        Task<int> GetTotalNumberOfDoctorsAsync();
+        Task<int> GetTotalNumberOfMaleDoctorAsync();
+        Task<int> GetTotalNumberOfFemaleDoctorAsync();
     }
 }

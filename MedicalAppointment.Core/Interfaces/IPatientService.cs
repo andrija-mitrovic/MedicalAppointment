@@ -8,7 +8,7 @@ namespace MedicalAppointment.Core.Interfaces
 {
     public interface IPatientService
     {
-        Task<int> GetPatientsNumber();
+        Task<int> GetPatientsNumberAsync();
         List<PatientsNumberByYears> GetPatientsNumberByYear();
     }
 }

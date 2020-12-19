@@ -16,7 +16,7 @@ namespace MedicalAppointment.Core.Services
             _patientService = patientService;
         }
 
-        public async Task<PatientReportDto> Create()
+        public async Task<PatientReportDto> CreateAsync()
         {
             var patients = _patientService.GetPatientsNumberByYear();
 
@@ -33,7 +33,7 @@ namespace MedicalAppointment.Core.Services
 
             return new PatientReportDto()
             {
-                TotalNumber = await _patientService.GetPatientsNumber(),
+                TotalNumber = await _patientService.GetPatientsNumberAsync(),
                 ChartData = chartPoints
             };
         }

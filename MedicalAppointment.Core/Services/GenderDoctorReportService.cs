@@ -16,14 +16,14 @@ namespace MedicalAppointment.Core.Services
             _genderService = genderService;
         }
 
-        public async Task<GenderReportDto> Create()
+        public async Task<GenderReportDto> CreateAsync()
         {
             return new GenderReportDto()
             {
-                MaleNumber = await _genderService.GetMaleDoctorsNumber(),
-                MalePercent = await _genderService.GetPercentOfMaleDoctorGender(),
-                FemaleNumber = await _genderService.GetFemaleDoctorsNumber(),
-                FemalePercent = await _genderService.GetPercentOfFemaleDoctorGender()
+                MaleNumber = await _genderService.GetMaleDoctorsNumberAsync(),
+                MalePercent = await _genderService.GetPercentOfMaleDoctorGenderAsync(),
+                FemaleNumber = await _genderService.GetFemaleDoctorsNumberAsync(),
+                FemalePercent = await _genderService.GetPercentOfFemaleDoctorGenderAsync()
             };
         }
     }

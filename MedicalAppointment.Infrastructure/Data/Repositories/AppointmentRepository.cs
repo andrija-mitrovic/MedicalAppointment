@@ -12,7 +12,7 @@ namespace MedicalAppointment.Infrastructure.Data.Repositories
     {
         public AppointmentRepository(ApplicationDbContext context) : base(context) { }
 
-        public async Task<IEnumerable<Appointment>> GetAppointmentsWithPatientDoctorDepartment()
+        public async Task<IEnumerable<Appointment>> GetAppointmentsWithPatientDoctorDepartmentAsync()
         {
             return await _context.Appointments
                 .Include(p => p.Patient)
@@ -20,7 +20,7 @@ namespace MedicalAppointment.Infrastructure.Data.Repositories
                 .Include(x => x.Department).ToListAsync();
         }
 
-        public async Task<Appointment> GetAppointmentWithPatientDoctorDepartmentById(int id)
+        public async Task<Appointment> GetAppointmentWithPatientDoctorDepartmentByIdAsync(int id)
         {
             return await _context.Appointments
                 .Include(p => p.Patient)
@@ -29,7 +29,7 @@ namespace MedicalAppointment.Infrastructure.Data.Repositories
                 .FirstOrDefaultAsync(x => x.AppointmentId == id);
         }
 
-        public async Task<int> GetTotalNumberOfAppointments()
+        public async Task<int> GetTotalNumberOfAppointmentsAsync()
         {
             return await _context.Appointments.CountAsync();
         }

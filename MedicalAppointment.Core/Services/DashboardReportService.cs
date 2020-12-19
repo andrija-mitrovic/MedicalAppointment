@@ -49,12 +49,12 @@ namespace MedicalAppointment.Core.Services
 
             var dashboardData = new DashboardReportDto()
             {
-                AppointmentReport = await _appointmentReportService.Create(),
-                BloodGroupReport = await _bloodGroupReportService.Create(),
-                DoctorReport = await _doctorReportService.Create(),
-                PatientReport = await _patientReportService.Create(),
-                GenderPatientReport = await _genderPatientReportService.Create(),
-                GenderDoctorReport = await _genderDoctorReportService.Create()
+                AppointmentReport = await _appointmentReportService.CreateAsync(),
+                BloodGroupReport = await _bloodGroupReportService.CreateAsync(),
+                DoctorReport = await _doctorReportService.CreateAsync(),
+                PatientReport = await _patientReportService.CreateAsync(),
+                GenderPatientReport = await _genderPatientReportService.CreateAsync(),
+                GenderDoctorReport = await _genderDoctorReportService.CreateAsync()
             };
 
             return dashboardData;

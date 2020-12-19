@@ -31,7 +31,7 @@ namespace MedicalAppointment.WebAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetDoctors()
         {
-            var doctors = await _unitOfWork.Doctors.GetDoctorsWithDepartment();
+            var doctors = await _unitOfWork.Doctors.GetDoctorsWithDepartmentAsync();
             var doctorsDto = _mapper.Map<IEnumerable<DoctorDetailDto>>(doctors);
 
             return Ok(doctorsDto);
@@ -41,7 +41,7 @@ namespace MedicalAppointment.WebAPI.Controllers
         [HttpGet("{id}", Name = "GetDoctor")]
         public async Task<IActionResult> GetDoctor(int id)
         {
-            var doctor = await _unitOfWork.Doctors.GetDoctorWithDepartmentById(id);
+            var doctor = await _unitOfWork.Doctors.GetDoctorWithDepartmentByIdAsync(id);
 
             if (doctor == null)
                 return NotFound();
@@ -91,7 +91,7 @@ namespace MedicalAppointment.WebAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteDoctor(int id)
         {
-            var doctor = await _unitOfWork.Doctors.GetDoctorWithDepartmentById(id);
+            var doctor = await _unitOfWork.Doctors.GetDoctorWithDepartmentByIdAsync(id);
 
             if (doctor == null)
                 return NotFound();

@@ -16,11 +16,11 @@ namespace MedicalAppointment.Core.Services
             _bloodGroupService = bloodGroupService;
         }
 
-        public async Task<BloodGroupReportDto> Create()
+        public async Task<BloodGroupReportDto> CreateAsync()
         {
             return new BloodGroupReportDto()
             {
-                TotalNumber = await _bloodGroupService.GetBloodGroupsNumber()
+                TotalNumber = await _bloodGroupService.GetBloodGroupsNumberAsync()
             };
         }
     }

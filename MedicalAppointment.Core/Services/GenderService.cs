@@ -16,54 +16,54 @@ namespace MedicalAppointment.Core.Services
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<int> GetMalePatientNumber()
+        public async Task<int> GetMalePatientNumberAsync()
         {
-            return await _unitOfWork.Patients.GetTotalNumberOfMalePatient();
+            return await _unitOfWork.Patients.GetTotalNumberOfMalePatientAsync();
         }
 
-        public async Task<int> GetFemalePatientNumber()
+        public async Task<int> GetFemalePatientNumberAsync()
         {
-            return await _unitOfWork.Patients.GetTotalNumberOfFemalePatient();
+            return await _unitOfWork.Patients.GetTotalNumberOfFemalePatientAsync();
         }
 
-        public async Task<decimal> GetPercentOfMalePatientGender()
+        public async Task<decimal> GetPercentOfMalePatientGenderAsync()
         {
-            int maleNumber = await GetMalePatientNumber();
-            int femaleNumber = await GetFemalePatientNumber();
+            int maleNumber = await GetMalePatientNumberAsync();
+            int femaleNumber = await GetFemalePatientNumberAsync();
 
             return ((decimal)maleNumber / (decimal)(maleNumber + femaleNumber)) * 100;
         }
 
-        public async Task<decimal> GetPercentOfFemalePatientGender()
+        public async Task<decimal> GetPercentOfFemalePatientGenderAsync()
         {
-            int maleNumber = await GetMalePatientNumber();
-            int femaleNumber = await GetFemalePatientNumber();
+            int maleNumber = await GetMalePatientNumberAsync();
+            int femaleNumber = await GetFemalePatientNumberAsync();
 
             return ((decimal)femaleNumber / (decimal)(maleNumber + femaleNumber)) * 100;
         }
 
-        public async Task<int> GetMaleDoctorsNumber()
+        public async Task<int> GetMaleDoctorsNumberAsync()
         {
-            return await _unitOfWork.Doctors.GetTotalNumberOfMaleDoctor();
+            return await _unitOfWork.Doctors.GetTotalNumberOfMaleDoctorAsync();
         }
 
-        public async Task<int> GetFemaleDoctorsNumber()
+        public async Task<int> GetFemaleDoctorsNumberAsync()
         {
-            return await _unitOfWork.Doctors.GetTotalNumberOfFemaleDoctor();
+            return await _unitOfWork.Doctors.GetTotalNumberOfFemaleDoctorAsync();
         }
 
-        public async Task<decimal> GetPercentOfMaleDoctorGender()
+        public async Task<decimal> GetPercentOfMaleDoctorGenderAsync()
         {
-            int maleNumber = await GetMaleDoctorsNumber();
-            int femaleNumber = await GetFemaleDoctorsNumber();
+            int maleNumber = await GetMaleDoctorsNumberAsync();
+            int femaleNumber = await GetFemaleDoctorsNumberAsync();
 
             return ((decimal)maleNumber / (decimal)(maleNumber + femaleNumber)) * 100;
         }
 
-        public async Task<decimal> GetPercentOfFemaleDoctorGender()
+        public async Task<decimal> GetPercentOfFemaleDoctorGenderAsync()
         {
-            int maleNumber = await GetMaleDoctorsNumber();
-            int femaleNumber = await GetFemaleDoctorsNumber();
+            int maleNumber = await GetMaleDoctorsNumberAsync();
+            int femaleNumber = await GetFemaleDoctorsNumberAsync();
 
             return ((decimal)femaleNumber / (decimal)(maleNumber + femaleNumber)) * 100;
         }

@@ -15,7 +15,6 @@ export const ROUTES: RouteInfo[] = [
     { path: '/department', title: 'Department',  icon:'ni-archive-2 text-yellow', class: '' },
     { path: '/bloodGroup', title: 'Blood Group',  icon:'ni ni-tag text-red', class: '' },
     { path: '/patient', title: 'Patient',  icon:'ni ni-ambulance text-orange', class: '' },
-    { path: '/errors', title: 'errors',  icon:'ni ni-ambulance text-orange', class: '' },
 ];
 
 @Component({

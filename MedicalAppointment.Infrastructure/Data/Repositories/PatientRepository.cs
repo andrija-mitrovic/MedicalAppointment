@@ -14,31 +14,31 @@ namespace MedicalAppointment.Infrastructure.Data.Repositories
     {
         public PatientRepository(ApplicationDbContext context) : base(context) { }
 
-        public async Task<IEnumerable<Patient>> GetPatientWithBloodGroup()
+        public async Task<IEnumerable<Patient>> GetPatientWithBloodGroupAsync()
         {
             return await _context.Patients.Include(x => x.BloodGroup).ToListAsync();
         }
-        public async Task<Patient> GetPatientWithBloodGroupById(int id)
+        public async Task<Patient> GetPatientWithBloodGroupByIdAsync(int id)
         {
             return await _context.Patients.Include(x => x.BloodGroup).FirstOrDefaultAsync(x => x.PatientId == id);
         }
 
-        public async Task<int> GetTotalNumberOfMalePatient()
+        public async Task<int> GetTotalNumberOfMalePatientAsync()
         {
             return await _context.Patients.CountAsync(x => x.Gender.ToUpper() == "MALE");  
         }
 
-        public async Task<int> GetTotalNumberOfFemalePatient()
+        public async Task<int> GetTotalNumberOfFemalePatientAsync()
         {
             return await _context.Patients.CountAsync(x => x.Gender.ToUpper() == "FEMALE");
         }
 
-        public async Task<int> GetTotalNumberOfPatients()
+        public async Task<int> GetTotalNumberOfPatientsAsync()
         {
             return await _context.Patients.CountAsync();
         }
 
-        public List<PatientsNumberByYears> GetPatientsNumberByAge()
+        public List<PatientsNumberByYears> GetPatientsNumberByAgeAsync()
         {
             return _context.PatientsNumberByYears
                 .FromSqlRaw(@"SELECT COUNT(*) AS Number,

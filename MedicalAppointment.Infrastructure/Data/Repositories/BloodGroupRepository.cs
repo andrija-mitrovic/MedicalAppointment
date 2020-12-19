@@ -12,7 +12,7 @@ namespace MedicalAppointment.Infrastructure.Data.Repositories
     {
         public BloodGroupRepository(ApplicationDbContext context) : base(context) { }
 
-        public async Task<int> GetTotalNumberOfBloodGroups()
+        public async Task<int> GetTotalNumberOfBloodGroupsAsync()
         {
             return await _context.BloodGroups.CountAsync();
         }

@@ -62,7 +62,7 @@ namespace MedicalAppointment.WebAPI.Controllers
             {
                 return Ok(new
                 {
-                    token = await _jwtTokenService.GenerateToken(user)
+                    token = await _jwtTokenService.GenerateTokenAsync(user)
                 });
             }
 

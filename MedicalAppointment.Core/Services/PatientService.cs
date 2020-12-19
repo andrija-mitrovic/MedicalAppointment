@@ -17,14 +17,14 @@ namespace MedicalAppointment.Core.Services
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<int> GetPatientsNumber()
+        public async Task<int> GetPatientsNumberAsync()
         {
-            return await _unitOfWork.Patients.GetTotalNumberOfPatients();
+            return await _unitOfWork.Patients.GetTotalNumberOfPatientsAsync();
         }
 
         public List<PatientsNumberByYears> GetPatientsNumberByYear()
         {
-            return _unitOfWork.Patients.GetPatientsNumberByAge();
+            return _unitOfWork.Patients.GetPatientsNumberByAgeAsync();
         }
     }
 }

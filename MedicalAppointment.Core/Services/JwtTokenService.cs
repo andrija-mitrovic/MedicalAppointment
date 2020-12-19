@@ -25,7 +25,7 @@ namespace MedicalAppointment.Core.Services
             _userManager = userManager;
         }
 
-        public async Task<string> GenerateToken(User user)
+        public async Task<string> GenerateTokenAsync(User user)
         {
             var claims = new List<Claim>
             {
