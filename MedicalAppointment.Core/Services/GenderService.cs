@@ -31,6 +31,8 @@ namespace MedicalAppointment.Core.Services
             int maleNumber = await GetMalePatientNumberAsync();
             int femaleNumber = await GetFemalePatientNumberAsync();
 
+            if (maleNumber == 0) return 0;
+
             return ((decimal)maleNumber / (decimal)(maleNumber + femaleNumber)) * 100;
         }
 
@@ -38,6 +40,8 @@ namespace MedicalAppointment.Core.Services
         {
             int maleNumber = await GetMalePatientNumberAsync();
             int femaleNumber = await GetFemalePatientNumberAsync();
+
+            if (femaleNumber == 0) return 0;
 
             return ((decimal)femaleNumber / (decimal)(maleNumber + femaleNumber)) * 100;
         }
@@ -57,6 +61,8 @@ namespace MedicalAppointment.Core.Services
             int maleNumber = await GetMaleDoctorsNumberAsync();
             int femaleNumber = await GetFemaleDoctorsNumberAsync();
 
+            if (maleNumber == 0) return 0;
+
             return ((decimal)maleNumber / (decimal)(maleNumber + femaleNumber)) * 100;
         }
 
@@ -64,6 +70,8 @@ namespace MedicalAppointment.Core.Services
         {
             int maleNumber = await GetMaleDoctorsNumberAsync();
             int femaleNumber = await GetFemaleDoctorsNumberAsync();
+
+            if (femaleNumber == 0) return 0;
 
             return ((decimal)femaleNumber / (decimal)(maleNumber + femaleNumber)) * 100;
         }

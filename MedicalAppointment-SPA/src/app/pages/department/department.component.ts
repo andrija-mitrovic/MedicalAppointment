@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Department } from 'src/app/_models/department';
 import { DepartmentService } from 'src/app/_services/department.service';
+import { DoctorService } from 'src/app/_services/doctor.service';
 
 @Component({
   selector: 'app-department',
@@ -16,6 +18,8 @@ export class DepartmentComponent implements OnInit {
 
   constructor(private departmentService: DepartmentService,
               private fb: FormBuilder,
+              private toaster: ToastrService,
+              private doctorService: DoctorService,
               private router: Router) { }
 
   ngOnInit() {
